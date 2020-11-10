@@ -1,17 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
+    <title>九九乘法表for-while-1</title>
     <url>/3eeb.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <content><![CDATA[<h3 id="九九乘法表for-while-1"><a href="#九九乘法表for-while-1" class="headerlink" title="九九乘法表for-while-1"></a>九九乘法表for-while-1</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 九九乘法表for-while</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>1, 10<span class="token punctuation">)</span>:  <span class="token comment" spellcheck="true"># 左闭右开</span>
+    j <span class="token operator">=</span> 1
+    <span class="token keyword">while</span> j <span class="token operator">&lt;=</span> i:
+        print<span class="token punctuation">(</span><span class="token string">"%d*%d=%-3d"</span> % <span class="token punctuation">(</span>j, i, j*i<span class="token punctuation">)</span>, end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+        j +<span class="token operator">=</span> 1
+    print<span class="token punctuation">(</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"上边的是九九乘法口诀。"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>代码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>九九乘法表for-for</title>
+    <url>/545d.html</url>
+    <content><![CDATA[<h3 id="九九乘法表-for-for"><a href="#九九乘法表-for-for" class="headerlink" title="九九乘法表  for-for"></a>九九乘法表  for-for</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>1, 10<span class="token punctuation">)</span>:
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>1, i+1<span class="token punctuation">)</span>:
+        print<span class="token punctuation">(</span><span class="token string">'&amp;#123;&amp;#125;x&amp;#123;&amp;#125;=&amp;#123;&amp;#125;\t'</span>.format<span class="token punctuation">(</span>j, i, i*j<span class="token punctuation">)</span>, end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    print<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>代码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>九九乘法表for-while-2</title>
+    <url>/3459.html</url>
+    <content><![CDATA[<p>九九乘法表for-while-2</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>1, 10<span class="token punctuation">)</span>:
+    j <span class="token operator">=</span> 0
+    <span class="token keyword">while</span> j <span class="token operator">&lt;</span> i:
+        j +<span class="token operator">=</span> 1
+        print<span class="token punctuation">(</span><span class="token string">"%d*%d=%-3d"</span> % <span class="token punctuation">(</span>i, j, i * j<span class="token punctuation">)</span>, end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    print<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>代码</tag>
+      </tags>
   </entry>
 </search>
