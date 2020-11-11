@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="九九乘法表for-for, ok36">
+    <meta name="keywords" content="Python打印九九乘法表, ok36">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>九九乘法表for-for | ok36</title>
+    <title>Python打印九九乘法表 | ok36</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -111,7 +111,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>留言板</span>
+      <span>留言</span>
     </a>
     
   </li>
@@ -122,7 +122,7 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友情链接</span>
+      <span>问链</span>
     </a>
     
   </li>
@@ -214,7 +214,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			留言板
+			留言
 		</a>
           
         </li>
@@ -225,7 +225,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			友情链接
+			问链
 		</a>
           
         </li>
@@ -246,12 +246,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">九九乘法表for-for</h1>
+                    <h1 class="description center-align post-title">Python打印九九乘法表</h1>
                 </div>
             </div>
         </div>
@@ -401,7 +401,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    41
+                    265
                 </div>
                 
 
@@ -418,10 +418,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="九九乘法表-for-for"><a href="#九九乘法表-for-for" class="headerlink" title="九九乘法表  for-for"></a>九九乘法表  for-for</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>1, 10<span class="token punctuation">)</span>:
-    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>1, i+1<span class="token punctuation">)</span>:
-        print<span class="token punctuation">(</span><span class="token string">'&amp;#123;&amp;#125;x&amp;#123;&amp;#125;=&amp;#123;&amp;#125;\t'</span>.format<span class="token punctuation">(</span>j, i, i*j<span class="token punctuation">)</span>, end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
-    print<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+                <h4 id="1-使用1行语句"><a href="#1-使用1行语句" class="headerlink" title="1 使用1行语句"></a>1 使用1行语句</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">' '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"%2s x%2s = %2s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>j<span class="token punctuation">,</span> i<span class="token punctuation">,</span> i<span class="token operator">*</span>j<span class="token punctuation">)</span> <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="2-使用while-while"><a href="#2-使用while-while" class="headerlink" title="2 使用while-while"></a>2 使用while-while</h4><pre class="line-numbers language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> i <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">:</span>
+    j <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>j <span class="token operator">&lt;=</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token comment" spellcheck="true"># j的大小是由i来控制的</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d*%d=%-3d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i<span class="token operator">*</span>j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">'\t'</span><span class="token punctuation">)</span>
+        j <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    i <span class="token operator">+=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-使用while-for"><a href="#3-使用while-for" class="headerlink" title="3 使用while-for"></a>3 使用while-for</h4><pre class="line-numbers language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># range()函数左闭右开</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d*%d=%-3d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i <span class="token operator">*</span> j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    i <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-使用for-while"><a href="#4-使用for-while" class="headerlink" title="4 使用for-while"></a>4 使用for-while</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    j <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">:</span>
+        j <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%d*%d=%-3d"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i <span class="token operator">*</span> j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-使用for-while-循环后加一行提示"><a href="#5-使用for-while-循环后加一行提示" class="headerlink" title="5 使用for-while 循环后加一行提示"></a>5 使用for-while <code>循环后加一行提示</code></h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 左闭右开</span>
+    j <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> j <span class="token operator">&lt;=</span> i<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%d*%d=%-3d"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>j<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token operator">*</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+        j <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"上边的是九九乘法口诀。"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-使用while-for"><a href="#6-使用while-for" class="headerlink" title="6 使用while-for"></a>6 使用while-for</h4><pre class="line-numbers language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># range()函数左闭右开</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d*%d=%-3d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i<span class="token operator">*</span>j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    i <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-使用for-for"><a href="#7-使用for-for" class="headerlink" title="7 使用for-for"></a>7 使用for-for</h4><pre class="line-numbers language-txt"><code class="language-txt"># 九九乘法表  for-for
+for i in range(1, 10):
+    for j in range(1, i+1):
+        print('&#123;&#125;x&#123;&#125;=&#123;&#125;\t'.format(j, i, i*j), end='')
+    print()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -443,7 +478,7 @@
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        文章地址:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -453,11 +488,11 @@
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        本文:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
+                    采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
                     <a href="/about" target="_blank">ok36</a>
@@ -609,7 +644,7 @@
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">计算机科学与技术</h4>
+            <h4 class="reward-title">选择其一即可</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -664,17 +699,15 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="九九乘法表for-for">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Python打印九九乘法表">
                         
-                        <span class="card-title">九九乘法表for-for</span>
+                        <span class="card-title">Python打印九九乘法表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            九九乘法表  for-forfor i in range(1, 10):
-    for j in range(1, i+1):
-        print('&amp;#123;&amp;#125;x&amp;#123;&amp;#125
+                            Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 是一种解释型语言： 开发过程中没有了编译环节。类似于PHP和Perl语言。<br>本文用多种方法编程打印九九乘法表。
                         
                     </div>
                     <div class="publish-info">
@@ -908,7 +941,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
             ok36<br>
-            PoweredbyHexoThemeMatery
+            poweredbyhexothemematery
             <br>
             
             
