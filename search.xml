@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>C 语言实例</title>
-    <url>/l/3eeb.html</url>
+    <url>/i/3eeb.html</url>
     <content><![CDATA[<h4 id="1-输出-“Hello-World-”"><a href="#1-输出-“Hello-World-”" class="headerlink" title="1.输出 “Hello, World!”"></a>1.输出 “Hello, World!”</h4><pre class="line-numbers language-txt"><code class="language-txt">#include <stdio.h>
 int main()
 &#123;
@@ -87,7 +87,7 @@ int main()
   </entry>
   <entry>
     <title>基础知识1-1</title>
-    <url>/l/3459.html</url>
+    <url>/i/3459.html</url>
     <content><![CDATA[<h4 id="1-1-信息与信息技术"><a href="#1-1-信息与信息技术" class="headerlink" title="1.1 信息与信息技术"></a>1.1 信息与信息技术</h4><p>1.信息<code>没有</code>的定义。一般认为是在<code>自然界</code>、<code>人类社会</code>和<code>人类思维活动</code>中，普遍存在的一切物质和事物的属性。<br>2.数据是指存储在某种媒体上<code>可以鉴别</code>的符号资料。<br>3.同一个信息可以用<code>不同的数据</code>表示。如：星期天，也可以用Sunday<br>4.信息的<code>符号化</code>是数据。数据是信息的<code>具体</code>表示形式。<br>5.社会物质文明的三大要素：<code>信息</code>、<code>物质</code>和<code>能源</code>。<br>6.文化的基本属性：<code>广泛性</code>，<code>传递性</code>、<code>教育性</code>、<code>深刻性</code>。</p>
 <h4 id="1-2计算机的起源于发展"><a href="#1-2计算机的起源于发展" class="headerlink" title="1.2计算机的起源于发展"></a>1.2计算机的起源于发展</h4><p>1.布尔提出了<code>符号逻辑</code>的思想。<br>2.巴贝奇最先提出<code>通用数字</code>计算机的基本设计思想。<br>3.第一台真正意义上的电子计算<code>ENIAC</code>于<code>1946</code>年在<code>宾夕法尼亚</code>大学正式投入运行。用<code>十进制数</code>计算<br>4.<code>ENIAC</code>的诞生奠定了电子计算机的发展基础<br>5.根据计算机采用的<code>主要原器件</code>的不同，分为<code>四代</code><br>6.</p>
 ]]></content>
@@ -100,7 +100,7 @@ int main()
   </entry>
   <entry>
     <title>Python打印九九乘法表</title>
-    <url>/l/545d.html</url>
+    <url>/i/545d.html</url>
     <content><![CDATA[<h4 id="1-使用1行语句"><a href="#1-使用1行语句" class="headerlink" title="1 使用1行语句"></a>1 使用1行语句</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">' '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"%2s x%2s = %2s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>j<span class="token punctuation">,</span> i<span class="token punctuation">,</span> i<span class="token operator">*</span>j<span class="token punctuation">)</span> <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="2-使用while-while"><a href="#2-使用while-while" class="headerlink" title="2 使用while-while"></a>2 使用while-while</h4><pre class="line-numbers language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">1</span>
 <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">:</span>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基础知识1-1, 计算机,Python,c,c++,Web">
+    <meta name="keywords" content="Python打印九九乘法表, 计算机,Python,c,c++,Web">
     <meta name="description" content="爱哈佛">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基础知识1-1 | Aihafo</title>
+    <title>Python打印九九乘法表 | Aihafo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -246,12 +246,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基础知识1-1</h1>
+                    <h1 class="description center-align post-title">Python打印九九乘法表</h1>
                 </div>
             </div>
         </div>
@@ -368,8 +368,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">基础</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BB%A3%E7%A0%81/">
+                                <span class="chip bg-color">代码</span>
                             </a>
                         
                     </div>
@@ -380,8 +384,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%9F%BA%E7%A1%80/" class="post-category">
-                                基础
+                            <a href="/categories/Python/" class="post-category">
+                                Python
                             </a>
                         
                     </div>
@@ -397,7 +401,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    282
+                    265
                 </div>
                 
 
@@ -414,8 +418,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1-1-信息与信息技术"><a href="#1-1-信息与信息技术" class="headerlink" title="1.1 信息与信息技术"></a>1.1 信息与信息技术</h4><p>1.信息<code>没有</code>的定义。一般认为是在<code>自然界</code>、<code>人类社会</code>和<code>人类思维活动</code>中，普遍存在的一切物质和事物的属性。<br>2.数据是指存储在某种媒体上<code>可以鉴别</code>的符号资料。<br>3.同一个信息可以用<code>不同的数据</code>表示。如：星期天，也可以用Sunday<br>4.信息的<code>符号化</code>是数据。数据是信息的<code>具体</code>表示形式。<br>5.社会物质文明的三大要素：<code>信息</code>、<code>物质</code>和<code>能源</code>。<br>6.文化的基本属性：<code>广泛性</code>，<code>传递性</code>、<code>教育性</code>、<code>深刻性</code>。</p>
-<h4 id="1-2计算机的起源于发展"><a href="#1-2计算机的起源于发展" class="headerlink" title="1.2计算机的起源于发展"></a>1.2计算机的起源于发展</h4><p>1.布尔提出了<code>符号逻辑</code>的思想。<br>2.巴贝奇最先提出<code>通用数字</code>计算机的基本设计思想。<br>3.第一台真正意义上的电子计算<code>ENIAC</code>于<code>1946</code>年在<code>宾夕法尼亚</code>大学正式投入运行。用<code>十进制数</code>计算<br>4.<code>ENIAC</code>的诞生奠定了电子计算机的发展基础<br>5.根据计算机采用的<code>主要原器件</code>的不同，分为<code>四代</code><br>6.</p>
+                <h4 id="1-使用1行语句"><a href="#1-使用1行语句" class="headerlink" title="1 使用1行语句"></a>1 使用1行语句</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">' '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"%2s x%2s = %2s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>j<span class="token punctuation">,</span> i<span class="token punctuation">,</span> i<span class="token operator">*</span>j<span class="token punctuation">)</span> <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="2-使用while-while"><a href="#2-使用while-while" class="headerlink" title="2 使用while-while"></a>2 使用while-while</h4><pre class="line-numbers language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> i <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">:</span>
+    j <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>j <span class="token operator">&lt;=</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token comment" spellcheck="true"># j的大小是由i来控制的</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d*%d=%-3d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i<span class="token operator">*</span>j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">'\t'</span><span class="token punctuation">)</span>
+        j <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    i <span class="token operator">+=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-使用while-for"><a href="#3-使用while-for" class="headerlink" title="3 使用while-for"></a>3 使用while-for</h4><pre class="line-numbers language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># range()函数左闭右开</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d*%d=%-3d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i <span class="token operator">*</span> j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    i <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-使用for-while"><a href="#4-使用for-while" class="headerlink" title="4 使用for-while"></a>4 使用for-while</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    j <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">:</span>
+        j <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%d*%d=%-3d"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i <span class="token operator">*</span> j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-使用for-while-循环后加一行提示"><a href="#5-使用for-while-循环后加一行提示" class="headerlink" title="5 使用for-while 循环后加一行提示"></a>5 使用for-while <code>循环后加一行提示</code></h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 左闭右开</span>
+    j <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> j <span class="token operator">&lt;=</span> i<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%d*%d=%-3d"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>j<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token operator">*</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+        j <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"上边的是九九乘法口诀。"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-使用while-for"><a href="#6-使用while-for" class="headerlink" title="6 使用while-for"></a>6 使用while-for</h4><pre class="line-numbers language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># range()函数左闭右开</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d*%d=%-3d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i<span class="token operator">*</span>j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    i <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-使用for-for"><a href="#7-使用for-for" class="headerlink" title="7 使用for-for"></a>7 使用for-for</h4><pre class="line-numbers language-txt"><code class="language-txt"># 九九乘法表  for-for
+for i in range(1, 10):
+    for j in range(1, i+1):
+        print('&#123;&#125;x&#123;&#125;=&#123;&#125;\t'.format(j, i, i*j), end='')
+    print()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -431,7 +472,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Aihafo</a>
+                    <a href="/about" rel="external nofollow noreferrer">ok36</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -441,7 +482,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ok36.github.io/l/3459.html">https://ok36.github.io/l/3459.html</a>
+                    <a href="https://aihafo.com/i/545d.html">https://aihafo.com/i/545d.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -454,7 +495,7 @@
                     采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Aihafo</a>
+                    <a href="/about" target="_blank">ok36</a>
                     !
                 </span>
             </div>
@@ -479,8 +520,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">基础</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BB%A3%E7%A0%81/">
+                                    <span class="chip bg-color">代码</span>
                                 </a>
                             
                         </div>
@@ -645,11 +690,12 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/l/545d.html">
+                <a href="/i/545d.html">
                     <div class="card-image">
                         
                         
@@ -665,9 +711,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -680,6 +726,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -702,26 +749,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/l/3eeb.html">
+                <a href="/i/3459.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="C 语言实例">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="基础知识1-1">
                         
-                        <span class="card-title">C 语言实例</span>
+                        <span class="card-title">基础知识1-1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.输出 “Hello, World!”#include 
-int main()
-&#123;
-   // printf() 中字符串需要引号
-   printf("Hello, World!");
-   return 0;
-&#125;
-
+                            1.1 信息与信息技术1.信息没有的定义。一般认为是在自然界、人类社会和人类思维活动中，普遍存在的一切物质和事物的属性。2.数据是指存储在某种媒体上可以鉴别的符号资料。3.同一个信息可以用不同的数据表示。如：星期天，也可以用Sunday4.
                         
                     </div>
                     <div class="publish-info">
@@ -732,8 +772,8 @@ int main()
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/c%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    c语言
+                            <a href="/categories/%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    基础
                                 </a>
                             
                             
@@ -743,8 +783,8 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/c%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">c语言</span>
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>
