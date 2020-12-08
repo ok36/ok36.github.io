@@ -4,63 +4,9 @@
   
     
     <entry>
-      <title>计算机网络基础与应用</title>
-      <link href="i/netyy001.html"/>
-      <url>i/netyy001.html</url>
-      
-        <content type="html"><![CDATA[<p>1.Tcp/ip协议采用层次体系结构自下而上分别为网络接口层，网际层，传输层和应用层，每一层都实现特定的网络功能。<br>2.常用的应用层协议有HTTP协议，FTP协议telnet协议和smtp协议等。<br>3.电子邮箱的地址格式。电子邮箱的地址格式为：<a href="mailto:&#x55;&#115;&#x65;&#x72;&#x6e;&#97;&#109;&#x65;&#64;&#x4d;&#x61;&#x69;&#108;&#x2e;&#115;&#x65;&#114;&#x76;&#x65;&#x72;&#x2e;&#110;&#97;&#109;&#101;">&#x55;&#115;&#x65;&#x72;&#x6e;&#97;&#109;&#x65;&#64;&#x4d;&#x61;&#x69;&#108;&#x2e;&#115;&#x65;&#114;&#x76;&#x65;&#x72;&#x2e;&#110;&#97;&#109;&#101;</a>。<br>4.电子邮件的特点。（1）快递。（2）可靠。（3）廉价。（4）方便。<br>5.电子商务模式。电子商务模式常见的有B2C.B2B.C2C<br>6.计算机网络安全的定义。计算机网络安全是指利用网络管理控制和技术措施，保证在一个网络环境里数据的保密性，完整性及可使用性受到保护。<br>7.计算机病毒的特点（1）寄生性（2）传染性（3）潜伏性（4）隐蔽性（5）破坏性，（6）可触发性。<br>8.系统漏洞的概念。系统漏洞是指应用软件或操作系统软件在逻辑设计上的缺陷或在编写时产生的错误。<br>9.防火墙的概念。防火墙是指由软件和硬件设备组合而成，在内部网和外部网之间专用网与公共网之间，Internet与internet之间的界面上构造的保护屏障，用以保护内部网免受非法用户的侵入。<br>10.在制作双绞线的过程中，必然要用到一些辅助工具和材料，如水晶头，5类非屏蔽双绞线，压线钳和网线测试仪。<br>11.双绞线排线顺序。T568B.白橙，橙，白绿，蓝，白蓝，绿，白棕，棕。<br>12.日常所用的双绞线主要是5类或超5类utp，其传输距离最长为100M。<br>13.在一个对等网中，可以有一个或多个工作组，但只有在同一个工作组的用户才能互相通信，而在不同工作组的用户无法通信。<br>14.网络体系结构是指通信系统的整体设计，它为网络硬件、软件、协议存取控制和拓扑提供标准。网络体系结构广泛采用的是国际标准化组织，在1979年提出的开放式系统互联osi参考模型。该参考模型用物理层、数据链路层、网络层传输层、会话层，表示层和应用层7个层次描述网络的结构。<br>15.一个IP地址包括两个标识码，（ID也称地址），即网络地址和主机地址。<br>16.子网掩码是一个32位地址，它的主要作用有两个：一是用于屏蔽IP地址的一部分以区别网络标识和主机标识，并说明该IP地址是在区域网上，还是在远程网上，二是用于将一个大的IP网络划分为若干个小的子网络。<br>17.网卡是位于osi模型中第二层数据链路层的设备。<br>18.交换机的主要功能包括物理编址、改变网络拓扑结构、错误校验、帧序列以及流量控制。<br>19.路由器的主要功能就是进行路由选择，即在网络中的两台计算机进行通信时，选择一条传送数据最短、最方便、最有效的路径。<br>20.网关一般工作在osi模型的高三层。<br>21.如果用户经常使用某个网络驱动器，可以把它映射到本地计算机上。<br>22.打印机共享也是局域网资源共享的一种方式，通常为了节省成本。<br>23.ADSL非对称数字用户环路，通常是上行速度慢，下行速度快。<br>24.打开IE浏览器，在地址栏输入路由器IP地址，如192.168.1.1。<br>25.查看计算机与无线路路由器是否连通的具体方法是，单击“开始”进入命令提示符窗口，输入“ping192.168.1.1”。<br>26.默认情况下，windowServer2008没有安装web服务组件。<br>27.验证FTP站点有两种方式，分别是通过浏览器、资源管理器。<br>28.FTP是一个客户机/服务器系统，其工作原理是：用户通过一个支持FTP协议的客户机程序，连接到远程主机上的FTP服务器程序，并通过客户机程序向服务器程序发出命令。<br>29.Dhcp服务是计算机网络的一项重要功能。主要作用是集中管理，分配IP地址。<br>30.Dhcp，即动态主机配置协议，主要作用是集中的管理，分配IP地址，使网络环境中的主机动态的获得IP地址，gateway地址DNS服务器地址等信息，并能够提供地址的使用率。<br>31.Dhcp分配IP地址方式。（1）自动分配方式，（2）动态分配方式（3）手工分配方式。<br>32.DHCP租约续订是指在指定的时间间隔内，DHCP客户端尝试续订租约以保证它能够得到最新的配置信息。<br>33.在DNS服务器解析的过程中有两种相反的解析功能：正向解析和反向解析。正向解析是指将域名转化为IP地址的过程。反向解析是指将IP地址转换为域名的过程。<br>34.Ping命命的作用是通过发送“internet控制消息协议（ICMP）”回响请求信息来验证与另一台TCP/IP计算机的IP级连接状态，回响应答消息的接收情况将和往返过程的次数一起显示出来。<br>35.Ping是测试网络连接情况以及信息包发送和接收情况非常有用的工具，是网络测试最常用的命令。<br>Ping命令向目标主机发送一个回送请求数据包，要求目标主机收到请求后给予回复，从而判断网络的响应时间和本机是否与目标主机（地址）连通。<br>36..TTL生存时间，是指ping命令发送的这一个数据包能在网络上存在的时间。当数据包传送到一个路由器之后，TTL就自动减1，如果减到0了还没有传送到目的主机就会自动丢失。<br>37.ipconfig/release，此时将释放动态分配的IP地址。<br>ipconfig/renew，此时将重新为计算机动态分配IP地址。<br>38.使用tracert命令跟踪指定主机的路由情况。<br>39.NetBI0S即网络基本输入/输出系统。<br>40.使用netstat命令查看当前活动的TCP连接状态。</p><p><img src="/image/headph.png" alt="计算机科学与技术a"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 网络 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 网络基础 </tag>
-            
-            <tag> 网络应用 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>计算机网络基础习题</title>
-      <link href="i/netyy001.html"/>
-      <url>i/netyy001.html</url>
-      
-        <content type="html"><![CDATA[<p>1.下列设备中，属于资源子网的是A。<br>A、主机    B、网络互联设备    C、集中器    D、网卡<br>2.下列设备中，属于通信子网的是C。<br>A、服务器    B、打印机        C、网卡    D、软件<br>3.下列哪些是对计算机网络不正确的定义D。<br>A.计算机网络是计算机的集合<br>B.计算机网络的目的是相互共享资源<br>C.计算机网络是在协议控制下通过通信系统来实现计算机之间的连接<br>D.计算机网络中的一台计算机可以干预另一台计算机的工作<br>4.若网络形状是由站点和连接站点的链路组成的一个闭合环，则称这种拓扑<br>结构为C。<br>A.星形拓扑    B.总线拓扑    C.环形拓扑    D.树形拓扑<br>5.下列A是光纤的特点？<br>A、传输速率高    B、价格便宜    C、布线方便    D、保密性较差<br>6.局域网常用的拓扑结构有总线、环形、星形3种,以下关于这3种拓扑结<br>构说法错误的是B。<br>A、总线网可靠性高、成本低，但当网上站点较多时会因数据冲突增多而使效率降低<br>B、环形网控制简单、信道利用率高、但存在问题<br>C、星形网结构简单、实现容易、但传输媒体不能共享<br>D、选用何种拓扑结构，首先要考虑采用何种媒体访问控制方法，其次要考虑性能、可靠性、成本、等因素<br>7.（双选题）如果你已经为办公室的每台作为网络工作站的微型机购置了网<br>卡，还配置了双绞线、RJ45接插件、集线器HUB，那么你要组建这个小型局域网时，你还必须配置A和C。<br>A、一台作为服务器的高档微型机    B、路由器<br>C、一套局域网操作系统软件    D、调制解调器<br>8.广域网的英文缩写为B。<br>A、LAN    B、WAN<br>C、ISDN    D、MAN<br>9.计算机网络中的结点（Node）是指（B）。<br>A、网络工作站<br>B、在通信线路与主机之间设置的通信线路控制处理机<br>C、为延长传输距离而设立的中继站<br>D、传输介质的连接点<br>10.在下面叙述中，正确的一条是(A)<br>A.实现计算机联网的最大的好处是能够实现资源共享B.局域网络(LAN)比广域网络(WAN)大C.电子邮件E-mail只能传送文本文件<br>D.在计算机网络中，有线网和无线网使用的传输介质均为双绞线、同轴电缆和光纤<br>11.计算机网络共享的资源是(D)。<br>A、路由器、交换机<br>B、域名、网络地址与MAC地址<br>C、计算机的文件与数据<br>D、计算机的软件、硬件与数据<br>12.关于计算机网络定义要点的描述中错误的是B。<br>A、互联的计算机系统是自治的系统<br>B、联网计算机之间的通信必须遵循TCP/IP<br>C、网络体系结构遵循分层结构模型。<br>D、组建计算机网络的主要目的是实现计算机资源的共享。<br>13.以下关于无线网络技术特点的描述中错误的是C。<br>A、从基站的角度来看，无线网络可以分为需要有基站与不需要有基站的两类。<br>B、WLAN需要架设AP接入点<br>C、WMAN不需要有基站<br>D、Adhoc网络不需要有基站<br>14.以下术语定义中错误的是D。<br>A、“computernetwork”表述的是用通信技术将大量独立计算机系统互联的集合<br>B、“internet”表述的是将多个计算机网络互联成大型网络系统的通用的技术<br>C、“Internet”是因特网或互联网的英文名字<br>D、“Intranet”是依据OSI参考模型与协议组建的计算机网络。<br>15.关于广域网特征的描述中错误的是D。<br>A、广域网是一种公共数据网络<br>B、广域网要为用户提供电信级的服务<br>C、广域网研究的重点是宽带核心交换技术<br>D、广域网的核心技术是线路交换技术<br>16.关于局域网特征的描述中错误的是B。<br>A、覆盖有限的地理范围<br>B、提供高数据传输速率（1.544~51.84Mbps）、低误码率的高质量数据传输环境<br>C、一般属于一个单位所有，易于建立、维护与扩展<br>D、从介质访问控制方法的角度来看，局域网可以分为共享局域网与交换式局域网<br>17.以下关于环状拓扑结构特点的描述中错误的是B。<br>A、结点通过点-点通信线路连接成闭合环路<br>B、环中数据可以沿两个方向逐站传送<br>C、环状拓扑结构简单，传输延时确定<br>D、环的运行和维护协议复杂。<br>18.以下关于数据报传输方式的特点的描述中错误的是D。<br>A、同一报文的不同分组可以经过不同的传输路径通过通信子网<br>B、同一报文的不同分组到达目的主机可能出现乱序、重复与丢失现象<br>C、每个分组在传输过程中都必须带有目的地址和源地址<br>D、数据报方式适用于长报文、会话式通信数据通信<br>19.数据链路两端的设备是C。<br>A.DTE        B.DCE<br>C.DTE或DCE    D.DTE和DCE<br>20.通过电话网实现数据交换，采用的是A。<br>A、电路交换        B、报文交换<br>C、数据报业务服务        D、虚电路业务服务<br>21.误码率描述了数据传输系统正常工作状态下传输的C。<br>A.安全性    B.效率    C.可靠性    D.延迟<br>22.对于二进制数据，根据奈奎斯特定理，若信道带宽B=2000Hz，则最大数据传输速率为C。<br>A.200bps        B.2000bps    C.4000bps    D.5600bps<br>23.采用异步传输方式，设数据位为7位，1位校验位，1位停止位，则其通信效率为(B)<br>A.30%    B.70%    C.80%    D.20%</p><p><img src="/image/headph.png" alt="计算机科学与技术a"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 网络 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 网络基础 </tag>
-            
-            <tag> 网络应用 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>windows server 2008 r2 x64</title>
-      <link href="i/WinSv2008.html"/>
-      <url>i/WinSv2008.html</url>
+      <link href="i/Winsrv2008.html"/>
+      <url>i/Winsrv2008.html</url>
       
         <content type="html"><![CDATA[<h2 id="windows-server-2008-r2-x64"><a href="#windows-server-2008-r2-x64" class="headerlink" title="windows server 2008 r2 x64"></a>windows server 2008 r2 x64</h2><h3 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h3><blockquote><p>1.Windows Server 2008 R2标准版 </p><p>2.Windows Server 2008 R2企业版</p><p>3.Windows Server 2008 R2数据中心版</p><p>4.Windows Web Server 2008 R2</p><p>5.Windows HPC Server 2008 R2 </p></blockquote><h3 id="官方下载"><a href="#官方下载" class="headerlink" title="官方下载"></a>官方下载</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.microsoft.com/en<span class="literal">-us</span>/download/details.aspx?id=<span class="number">2227</span></span><br></pre></td></tr></table></figure><h3 id="vl版本"><a href="#vl版本" class="headerlink" title="vl版本"></a>vl版本</h3><blockquote><p>Windows Server 2008 R2 Standard, Enterprise, Datacenter, and Web with Service Pack 1, VL Build (x64) - DVD (Chinese-Simplified)</p></blockquote><h3 id="其他下载"><a href="#其他下载" class="headerlink" title="其他下载"></a>其他下载</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ed2k://|file|cn_windows_server_2008_r2_standard_enterprise_datacenter_and_web_with_sp1_vl_build_x64_dvd_617396.iso|<span class="number">3368962048</span>|<span class="number">7</span>C210CAC37A05F459758BCC1F4478F9E|/</span><br><span class="line">ed2k://|file|cn_windows_server_2008_r2_standard_enterprise_datacenter_web_vl_build_x64_dvd_x15<span class="literal">-59777</span>.iso|<span class="number">3270465536</span>|<span class="number">1</span>C7FDB37C0CEC1765A52CD49B2227CBE|/</span><br></pre></td></tr></table></figure><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote><p>Windows Server 2008 R2是一款<code>服务器操作系统</code>。同2008年1月发布的Windows Server 2008相比，Windows Server 2008 R2继续提升了<code>虚拟化</code>、系统管理弹一个强项。并强化PowerShell对各个服务器角色的管理指令。Windows Server 2008 R2是<code>第一个只提供64位版本</code>的服务器操作系统。</p></blockquote><h2 id="硬件需求"><a href="#硬件需求" class="headerlink" title="硬件需求"></a>硬件需求</h2><ul><li><p><input checked="" disabled="" type="checkbox">  处理器最低：1.4 GHz（x64处理器）</p></li><li><p><input checked="" disabled="" type="checkbox">  内存最低：512 MB RAM</p></li><li><p><input checked="" disabled="" type="checkbox">  可用磁盘空间最低：32 GB</p></li><li><p><input checked="" disabled="" type="checkbox">  显示器超级VGA（800 × 600）或更高分辨率的显示器</p></li></ul><p><img src="/image/winserver2008.jpg"></p>]]></content>
       
@@ -116,7 +62,7 @@
       <link href="i/jc001.html"/>
       <url>i/jc001.html</url>
       
-        <content type="html"><![CDATA[<h4 id="1-1-信息与信息技术"><a href="#1-1-信息与信息技术" class="headerlink" title="1.1 信息与信息技术"></a>1.1 信息与信息技术</h4><p>1.信息<code>没有</code>明确的定义。一般认为是在<code>自然界</code>、<code>人类社会</code>和<code>人类思维活动</code>中，普遍存在的一切物质和事物的属性。<br>2.数据是指存储在某种媒体上<code>可以鉴别</code>的符号资料。<br>3.同一个信息可以用<code>不同的数据</code>表示。如：星期天，也可以用Sunday<br>4.信息的<code>符号化</code>是数据。数据是信息的<code>具体</code>表示形式。<br>5.社会物质文明的三大要素：<code>信息</code>、<code>物质</code>和<code>能源</code>。<br>6.文化的基本属性：<code>广泛性</code>，<code>传递性</code>、<code>教育性</code>、<code>深刻性</code>。</p><h4 id="1-2计算机的起源于发展"><a href="#1-2计算机的起源于发展" class="headerlink" title="1.2计算机的起源于发展"></a>1.2计算机的起源于发展</h4><p>1.<code>布尔</code>提出了<code>符号逻辑</code>的思想。<br>2.<code>巴贝奇</code>最先提出<code>通用数字</code>计算机的基本设计思想。<br>3.第一台真正意义上的电子计算<code>ENIAC</code>于<code>1946</code>年在<code>宾夕法尼亚大学</code>正式投入运行。用<code>十进制数</code>计算<br>4.<code>ENIAC</code>的诞生奠定了电子计算机的发展基础<br>5.根据计算机采用的<code>主要原器件</code>的不同，分为<code>四代</code><br>(1)1946～1956 <code>电子管</code> 机器语言 汇编语言 科学计算<br>(2)1956～1964 <code>晶体管</code> 高级程序设计语言 数据处理<br>(3)1964～1971 <code>中小规模集成电路</code>  操作系统和会话式语言 各个领域<br>(4)1971年～现在 <code>超大规模集成电路</code> 面向对象的高级语言 网络时代<br>6.计算机的分类<br>(1)根据<code>处理的对象</code>划分 模拟计算机、数字计算机和混合计算机<br>(2)根据<code>用途</code>划分 专用计算机和通用计算机<br>(3)根据<code>规模</code>划分 巨型机、大型机小型机、微型机和工作站<br>7.<code>科学计算是</code>指科学和工程中的<code>数值计算</code><br>8.<code>信息管理</code>是指<code>非数值</code>形式的数据处理<br>9.计算机辅助<code>设计CAD</code>、计算机辅助<code>制造CAM</code>、计算机辅助<code>教育CBE</code>、计算机辅助<code>教学CAI </code>、 计算机辅助<code>教学管理CMI </code>。计算机<code>辅助测试CAT</code>和计算机集成制造系统CIMS<br>10.<code>人工智能</code>（AI，Artificial Intelligence）是与<code>人类智能</code>的有关功能</p><h4 id="1-3计算机中信息的表示"><a href="#1-3计算机中信息的表示" class="headerlink" title="1.3计算机中信息的表示"></a>1.3计算机中信息的表示</h4><p>1.用于信息表示的符号系统有三个基本特点：<code>有限符号集</code>，<code>不同符号有明显的差别</code>，<code>存在一组规则</code></p><p><img src="/image/headph.png" alt="计算机科学与技术a"></p>]]></content>
+        <content type="html"><![CDATA[<h4 id="1-1-信息与信息技术"><a href="#1-1-信息与信息技术" class="headerlink" title="1.1 信息与信息技术"></a>1.1 信息与信息技术</h4><p>1.信息<code>没有</code>明确的定义。一般认为是在<code>自然界</code>、<code>人类社会</code>和<code>人类思维活动</code>中，普遍存在的一切物质和事物的属性。<br>2.数据是指存储在某种媒体上<code>可以鉴别</code>的符号资料。<br>3.同一个信息可以用<code>不同的数据</code>表示。如：星期天，也可以用Sunday<br>4.信息的<code>符号化</code>是数据。数据是信息的<code>具体</code>表示形式。<br>5.社会物质文明的三大要素：<code>信息</code>、<code>物质</code>和<code>能源</code>。<br>6.文化的基本属性：<code>广泛性</code>，<code>传递性</code>、<code>教育性</code>、<code>深刻性</code>。</p><h4 id="1-2计算机的起源于发展"><a href="#1-2计算机的起源于发展" class="headerlink" title="1.2计算机的起源于发展"></a>1.2计算机的起源于发展</h4><p>1.<code>布尔</code>提出了<code>符号逻辑</code>的思想。<br>2.<code>巴贝奇</code>最先提出<code>通用数字</code>计算机的基本设计思想。<br>3.第一台真正意义上的电子计算<code>ENIAC</code>于<code>1946</code>年在<code>宾夕法尼亚大学</code>正式投入运行。用<code>十进制数</code>计算<br>4.<code>ENIAC</code>的诞生奠定了电子计算机的发展基础<br>5.根据计算机采用的<code>主要原器件</code>的不同，分为<code>四代</code><br>(1)1946～1956 <code>电子管</code> 机器语言 汇编语言 科学计算<br>(2)1956～1964 <code>晶体管</code> 高级程序设计语言 数据处理<br>(3)1964～1971 <code>中小规模集成电路</code>  操作系统和会话式语言 各个领域<br>(4)1971年～现在 <code>超大规模集成电路</code> 面向对象的高级语言 网络时代<br>6.计算机的分类<br>(1)根据<code>处理的对象</code>划分 模拟计算机、数字计算机和混合计算机<br>(2)根据<code>用途</code>划分 专用计算机和通用计算机<br>(3)根据<code>规模</code>划分 巨型机、大型机小型机、微型机和工作站<br>7.<code>科学计算是</code>指科学和工程中的<code>数值计算</code><br>8.<code>信息管理</code>是指<code>非数值</code>形式的数据处理<br>9.计算机辅助<code>设计CAD</code>、计算机辅助<code>制造CAM</code>、计算机辅助<code>教育CBE</code>、计算机辅助<code>教学CAI </code>、 计算机辅助<code>教学管理CMI </code>。计算机<code>辅助测试CAT</code>和计算机集成制造系统CIMS<br>10.<code>人工智能</code>（AI，Artificial Intelligence）是与<code>人类智能</code>的有关功能</p><h4 id="1-3计算机中信息的表示"><a href="#1-3计算机中信息的表示" class="headerlink" title="1.3计算机中信息的表示"></a>1.3计算机中信息的表示</h4><p>1.用于信息表示的符号系统有三个基本特点：<code>有限符号集</code>，<code>不同符号有明显的差别</code>，<code>存在一组规则</code></p><p><img src="/image/jsjjc.gif" alt="计算机科学与技术a"></p>]]></content>
       
       
       <categories>
@@ -139,16 +85,70 @@
     
     
     <entry>
-      <title>Python打印九九乘法表</title>
+      <title>计算机网络基础与应用</title>
       <link href="i/netyy001.html"/>
       <url>i/netyy001.html</url>
+      
+        <content type="html"><![CDATA[<p>1.Tcp/ip协议采用层次体系结构自下而上分别为网络接口层，网际层，传输层和应用层，每一层都实现特定的网络功能。<br>2.常用的应用层协议有HTTP协议，FTP协议telnet协议和smtp协议等。<br>3.电子邮箱的地址格式。电子邮箱的地址格式为：<a href="mailto:&#x55;&#x73;&#x65;&#114;&#110;&#x61;&#x6d;&#x65;&#x40;&#x4d;&#97;&#x69;&#108;&#46;&#x73;&#x65;&#x72;&#x76;&#x65;&#x72;&#46;&#110;&#x61;&#109;&#101;">&#x55;&#x73;&#x65;&#114;&#110;&#x61;&#x6d;&#x65;&#x40;&#x4d;&#97;&#x69;&#108;&#46;&#x73;&#x65;&#x72;&#x76;&#x65;&#x72;&#46;&#110;&#x61;&#109;&#101;</a>。<br>4.电子邮件的特点。（1）快递。（2）可靠。（3）廉价。（4）方便。<br>5.电子商务模式。电子商务模式常见的有B2C.B2B.C2C<br>6.计算机网络安全的定义。计算机网络安全是指利用网络管理控制和技术措施，保证在一个网络环境里数据的保密性，完整性及可使用性受到保护。<br>7.计算机病毒的特点（1）寄生性（2）传染性（3）潜伏性（4）隐蔽性（5）破坏性，（6）可触发性。<br>8.系统漏洞的概念。系统漏洞是指应用软件或操作系统软件在逻辑设计上的缺陷或在编写时产生的错误。<br>9.防火墙的概念。防火墙是指由软件和硬件设备组合而成，在内部网和外部网之间专用网与公共网之间，Internet与internet之间的界面上构造的保护屏障，用以保护内部网免受非法用户的侵入。<br>10.在制作双绞线的过程中，必然要用到一些辅助工具和材料，如水晶头，5类非屏蔽双绞线，压线钳和网线测试仪。<br>11.双绞线排线顺序。T568B.白橙，橙，白绿，蓝，白蓝，绿，白棕，棕。<br>12.日常所用的双绞线主要是5类或超5类utp，其传输距离最长为100M。<br>13.在一个对等网中，可以有一个或多个工作组，但只有在同一个工作组的用户才能互相通信，而在不同工作组的用户无法通信。<br>14.网络体系结构是指通信系统的整体设计，它为网络硬件、软件、协议存取控制和拓扑提供标准。网络体系结构广泛采用的是国际标准化组织，在1979年提出的开放式系统互联osi参考模型。该参考模型用物理层、数据链路层、网络层传输层、会话层，表示层和应用层7个层次描述网络的结构。<br>15.一个IP地址包括两个标识码，（ID也称地址），即网络地址和主机地址。<br>16.子网掩码是一个32位地址，它的主要作用有两个：一是用于屏蔽IP地址的一部分以区别网络标识和主机标识，并说明该IP地址是在区域网上，还是在远程网上，二是用于将一个大的IP网络划分为若干个小的子网络。<br>17.网卡是位于osi模型中第二层数据链路层的设备。<br>18.交换机的主要功能包括物理编址、改变网络拓扑结构、错误校验、帧序列以及流量控制。<br>19.路由器的主要功能就是进行路由选择，即在网络中的两台计算机进行通信时，选择一条传送数据最短、最方便、最有效的路径。<br>20.网关一般工作在osi模型的高三层。<br>21.如果用户经常使用某个网络驱动器，可以把它映射到本地计算机上。<br>22.打印机共享也是局域网资源共享的一种方式，通常为了节省成本。<br>23.ADSL非对称数字用户环路，通常是上行速度慢，下行速度快。<br>24.打开IE浏览器，在地址栏输入路由器IP地址，如192.168.1.1。<br>25.查看计算机与无线路路由器是否连通的具体方法是，单击“开始”进入命令提示符窗口，输入“ping192.168.1.1”。<br>26.默认情况下，windowServer2008没有安装web服务组件。<br>27.验证FTP站点有两种方式，分别是通过浏览器、资源管理器。<br>28.FTP是一个客户机/服务器系统，其工作原理是：用户通过一个支持FTP协议的客户机程序，连接到远程主机上的FTP服务器程序，并通过客户机程序向服务器程序发出命令。<br>29.Dhcp服务是计算机网络的一项重要功能。主要作用是集中管理，分配IP地址。<br>30.Dhcp，即动态主机配置协议，主要作用是集中的管理，分配IP地址，使网络环境中的主机动态的获得IP地址，gateway地址DNS服务器地址等信息，并能够提供地址的使用率。<br>31.Dhcp分配IP地址方式。（1）自动分配方式，（2）动态分配方式（3）手工分配方式。<br>32.DHCP租约续订是指在指定的时间间隔内，DHCP客户端尝试续订租约以保证它能够得到最新的配置信息。<br>33.在DNS服务器解析的过程中有两种相反的解析功能：正向解析和反向解析。正向解析是指将域名转化为IP地址的过程。反向解析是指将IP地址转换为域名的过程。<br>34.Ping命命的作用是通过发送“internet控制消息协议（ICMP）”回响请求信息来验证与另一台TCP/IP计算机的IP级连接状态，回响应答消息的接收情况将和往返过程的次数一起显示出来。<br>35.Ping是测试网络连接情况以及信息包发送和接收情况非常有用的工具，是网络测试最常用的命令。<br>Ping命令向目标主机发送一个回送请求数据包，要求目标主机收到请求后给予回复，从而判断网络的响应时间和本机是否与目标主机（地址）连通。<br>36..TTL生存时间，是指ping命令发送的这一个数据包能在网络上存在的时间。当数据包传送到一个路由器之后，TTL就自动减1，如果减到0了还没有传送到目的主机就会自动丢失。<br>37.ipconfig/release，此时将释放动态分配的IP地址。<br>ipconfig/renew，此时将重新为计算机动态分配IP地址。<br>38.使用tracert命令跟踪指定主机的路由情况。<br>39.NetBI0S即网络基本输入/输出系统。<br>40.使用netstat命令查看当前活动的TCP连接状态。</p><p><img src="/image/net.gif" alt="计算机科学与技术a"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络基础 </tag>
+            
+            <tag> 网络应用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机网络基础习题</title>
+      <link href="i/netyy002.html"/>
+      <url>i/netyy002.html</url>
+      
+        <content type="html"><![CDATA[<p>1.下列设备中，属于资源子网的是A。<br>A、主机    B、网络互联设备    C、集中器    D、网卡<br>2.下列设备中，属于通信子网的是C。<br>A、服务器    B、打印机        C、网卡    D、软件<br>3.下列哪些是对计算机网络不正确的定义D。<br>A.计算机网络是计算机的集合<br>B.计算机网络的目的是相互共享资源<br>C.计算机网络是在协议控制下通过通信系统来实现计算机之间的连接<br>D.计算机网络中的一台计算机可以干预另一台计算机的工作<br>4.若网络形状是由站点和连接站点的链路组成的一个闭合环，则称这种拓扑<br>结构为C。<br>A.星形拓扑    B.总线拓扑    C.环形拓扑    D.树形拓扑<br>5.下列A是光纤的特点？<br>A、传输速率高    B、价格便宜    C、布线方便    D、保密性较差<br>6.局域网常用的拓扑结构有总线、环形、星形3种,以下关于这3种拓扑结<br>构说法错误的是B。<br>A、总线网可靠性高、成本低，但当网上站点较多时会因数据冲突增多而使效率降低<br>B、环形网控制简单、信道利用率高、但存在问题<br>C、星形网结构简单、实现容易、但传输媒体不能共享<br>D、选用何种拓扑结构，首先要考虑采用何种媒体访问控制方法，其次要考虑性能、可靠性、成本、等因素<br>7.（双选题）如果你已经为办公室的每台作为网络工作站的微型机购置了网<br>卡，还配置了双绞线、RJ45接插件、集线器HUB，那么你要组建这个小型局域网时，你还必须配置A和C。<br>A、一台作为服务器的高档微型机    B、路由器<br>C、一套局域网操作系统软件    D、调制解调器<br>8.广域网的英文缩写为B。<br>A、LAN    B、WAN<br>C、ISDN    D、MAN<br>9.计算机网络中的结点（Node）是指（B）。<br>A、网络工作站<br>B、在通信线路与主机之间设置的通信线路控制处理机<br>C、为延长传输距离而设立的中继站<br>D、传输介质的连接点<br>10.在下面叙述中，正确的一条是(A)<br>A.实现计算机联网的最大的好处是能够实现资源共享B.局域网络(LAN)比广域网络(WAN)大C.电子邮件E-mail只能传送文本文件<br>D.在计算机网络中，有线网和无线网使用的传输介质均为双绞线、同轴电缆和光纤<br>11.计算机网络共享的资源是(D)。<br>A、路由器、交换机<br>B、域名、网络地址与MAC地址<br>C、计算机的文件与数据<br>D、计算机的软件、硬件与数据<br>12.关于计算机网络定义要点的描述中错误的是B。<br>A、互联的计算机系统是自治的系统<br>B、联网计算机之间的通信必须遵循TCP/IP<br>C、网络体系结构遵循分层结构模型。<br>D、组建计算机网络的主要目的是实现计算机资源的共享。<br>13.以下关于无线网络技术特点的描述中错误的是C。<br>A、从基站的角度来看，无线网络可以分为需要有基站与不需要有基站的两类。<br>B、WLAN需要架设AP接入点<br>C、WMAN不需要有基站<br>D、Adhoc网络不需要有基站<br>14.以下术语定义中错误的是D。<br>A、“computernetwork”表述的是用通信技术将大量独立计算机系统互联的集合<br>B、“internet”表述的是将多个计算机网络互联成大型网络系统的通用的技术<br>C、“Internet”是因特网或互联网的英文名字<br>D、“Intranet”是依据OSI参考模型与协议组建的计算机网络。<br>15.关于广域网特征的描述中错误的是D。<br>A、广域网是一种公共数据网络<br>B、广域网要为用户提供电信级的服务<br>C、广域网研究的重点是宽带核心交换技术<br>D、广域网的核心技术是线路交换技术<br>16.关于局域网特征的描述中错误的是B。<br>A、覆盖有限的地理范围<br>B、提供高数据传输速率（1.544~51.84Mbps）、低误码率的高质量数据传输环境<br>C、一般属于一个单位所有，易于建立、维护与扩展<br>D、从介质访问控制方法的角度来看，局域网可以分为共享局域网与交换式局域网<br>17.以下关于环状拓扑结构特点的描述中错误的是B。<br>A、结点通过点-点通信线路连接成闭合环路<br>B、环中数据可以沿两个方向逐站传送<br>C、环状拓扑结构简单，传输延时确定<br>D、环的运行和维护协议复杂。<br>18.以下关于数据报传输方式的特点的描述中错误的是D。<br>A、同一报文的不同分组可以经过不同的传输路径通过通信子网<br>B、同一报文的不同分组到达目的主机可能出现乱序、重复与丢失现象<br>C、每个分组在传输过程中都必须带有目的地址和源地址<br>D、数据报方式适用于长报文、会话式通信数据通信<br>19.数据链路两端的设备是C。<br>A.DTE        B.DCE<br>C.DTE或DCE    D.DTE和DCE<br>20.通过电话网实现数据交换，采用的是A。<br>A、电路交换        B、报文交换<br>C、数据报业务服务        D、虚电路业务服务<br>21.误码率描述了数据传输系统正常工作状态下传输的C。<br>A.安全性    B.效率    C.可靠性    D.延迟<br>22.对于二进制数据，根据奈奎斯特定理，若信道带宽B=2000Hz，则最大数据传输速率为C。<br>A.200bps        B.2000bps    C.4000bps    D.5600bps<br>23.采用异步传输方式，设数据位为7位，1位校验位，1位停止位，则其通信效率为(B)<br>A.30%    B.70%    C.80%    D.20%</p><p><img src="/image/net.gif" alt="计算机科学与技术a"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络基础 </tag>
+            
+            <tag> 网络应用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python打印九九乘法表</title>
+      <link href="i/py999.html"/>
+      <url>i/py999.html</url>
       
         <content type="html"><![CDATA[<h4 id="1-使用1行语句"><a href="#1-使用1行语句" class="headerlink" title="1 使用1行语句"></a>1 使用1行语句</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;\n&#x27;</span>.join([<span class="string">&#x27; &#x27;</span>.join([<span class="string">&quot;%2s x%2s = %2s&quot;</span> % (j, i, i*j) <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, i+<span class="number">1</span>)]) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>)]))</span><br></pre></td></tr></table></figure><h4 id="2-使用while-while"><a href="#2-使用while-while" class="headerlink" title="2 使用while-while"></a>2 使用while-while</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= <span class="number">9</span>:</span><br><span class="line">    j = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span>(j &lt;= i):    <span class="comment"># j的大小是由i来控制的</span></span><br><span class="line">        print(<span class="string">&#x27;%d*%d=%-3d&#x27;</span> % (i, j, i*j), end=<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    print(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure><h4 id="3-使用while-for"><a href="#3-使用while-for" class="headerlink" title="3 使用while-for"></a>3 使用while-for</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> (i &lt;= <span class="number">9</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, i + <span class="number">1</span>):  <span class="comment"># range()函数左闭右开</span></span><br><span class="line">        print(<span class="string">&#x27;%d*%d=%-3d&#x27;</span> % (i, j, i * j), end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">    print()</span><br></pre></td></tr></table></figure><h4 id="4-使用for-while"><a href="#4-使用for-while" class="headerlink" title="4 使用for-while"></a>4 使用for-while</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; i:</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">        print(<span class="string">&quot;%d*%d=%-3d&quot;</span> % (i, j, i * j), end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure><h4 id="5-使用for-while"><a href="#5-使用for-while" class="headerlink" title="5 使用for-while"></a>5 使用for-while</h4><p><code>循环后加一行提示</code></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>):  <span class="comment"># 左闭右开</span></span><br><span class="line">    j = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt;= i:</span><br><span class="line">        print(<span class="string">&quot;%d*%d=%-3d&quot;</span> % (j, i, j*i), end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    print()</span><br><span class="line">print(<span class="string">&quot;上边的是九九乘法口诀。&quot;</span>)</span><br></pre></td></tr></table></figure><h4 id="6-使用while-for"><a href="#6-使用while-for" class="headerlink" title="6 使用while-for"></a>6 使用while-for</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> (i &lt;= <span class="number">9</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, i+<span class="number">1</span>):  <span class="comment"># range()函数左闭右开</span></span><br><span class="line">        print(<span class="string">&#x27;%d*%d=%-3d&#x27;</span> % (i, j, i*j), end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">    print()</span><br></pre></td></tr></table></figure><h4 id="7-使用for-for"><a href="#7-使用for-for" class="headerlink" title="7 使用for-for"></a>7 使用for-for</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 九九乘法表  for-for</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, i+<span class="number">1</span>):</span><br><span class="line">        print(<span class="string">&#x27;&#123;&#125;x&#123;&#125;=&#123;&#125;\t&#x27;</span>.<span class="built_in">format</span>(j, i, i*j), end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
           
-          <category> Python </category>
+          <category> python </category>
           
       </categories>
       
@@ -157,7 +157,36 @@
             
             <tag> 程序设计语言 </tag>
             
-            <tag> Python </tag>
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>sql数据库</title>
+      <link href="i/sqldb.html"/>
+      <url>i/sqldb.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="sql-server-2008-数据库"><a href="#sql-server-2008-数据库" class="headerlink" title="sql server 2008 数据库"></a>sql server 2008 数据库</h2><h3 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h3><blockquote><p>sql server 2008 数据库</p></blockquote><h3 id="官方下载"><a href="#官方下载" class="headerlink" title="官方下载"></a>官方下载</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.microsoft.com/</span><br></pre></td></tr></table></figure><h3 id="vl版本"><a href="#vl版本" class="headerlink" title="vl版本"></a>vl版本</h3><blockquote><p>sql server 2008</p></blockquote><h3 id="其他下载"><a href="#其他下载" class="headerlink" title="其他下载"></a>其他下载</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote><p>sql server 2008 数据库</p></blockquote><h2 id="硬件需求"><a href="#硬件需求" class="headerlink" title="硬件需求"></a>硬件需求</h2><ul><li><p><input checked="" disabled="" type="checkbox">  处理器最低：1.4 GHz（x64处理器）</p></li><li><p><input checked="" disabled="" type="checkbox">  内存最低：512 MB RAM</p></li><li><p><input checked="" disabled="" type="checkbox">  可用磁盘空间最低：32 GB</p></li><li><p><input checked="" disabled="" type="checkbox">  显示器超级VGA（800 × 600）或更高分辨率的显示器</p></li></ul><p><img src="/image/sql.gif"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> sql </tag>
+            
+            <tag> sql数据库 </tag>
             
         </tags>
       
