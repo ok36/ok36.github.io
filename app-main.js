@@ -427,3 +427,102 @@ document.addEventListener('DOMContentLoaded', () => {
     initSettings();
     new SearchModule();
 });
+
+//防止恶意复制
+// 禁用右键菜单
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// 禁用文本选择
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// 禁用复制快捷键 Ctrl+C, Ctrl+Insert
+document.addEventListener('keydown', function(e) {
+    // 禁用 Ctrl+C
+    if (e.ctrlKey && e.key === 'c') {
+        e.preventDefault();
+        return false;
+    }
+    
+    // 禁用 Ctrl+Insert (某些系统上的复制快捷键)
+    if (e.ctrlKey && e.key === 'Insert') {
+        e.preventDefault();
+        return false;
+    }
+    
+    // 禁用 Ctrl+U (查看源代码)
+    if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        return false;
+    }
+    
+    // 禁用 F12 (开发者工具)
+    if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// 禁用剪贴板复制
+document.addEventListener('copy', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// 禁用剪切
+document.addEventListener('cut', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// 禁用粘贴到页面（防止通过粘贴方式添加内容）
+document.addEventListener('paste', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// 针对触摸设备，禁用长按选择文本
+document.addEventListener('touchstart', function(e) {
+    // 记录触摸开始时间
+    this.startTime = new Date().getTime();
+}, false);
+
+document.addEventListener('touchend', function(e) {
+    // 计算触摸持续时间，如果超过500ms，视为长按
+    var endTime = new Date().getTime();
+    if (endTime - this.startTime > 500) {
+        e.preventDefault();
+        return false;
+    }
+}, false);
+
+// 禁用鼠标拖拽选择
+document.addEventListener('mousedown', function(e) {
+    e.preventDefault();
+    return false;
+}, true);
+
+// 为所有元素添加样式，防止文本选择
+var style = document.createElement('style');
+style.textContent = `
+    * {
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+        pointer-events: auto !important;
+    }
+    /* 确保输入框仍然可以使用（如果需要） */
+    input, textarea {
+        -webkit-user-select: text !important;
+        -moz-user-select: text !important;
+        -ms-user-select: text !important;
+        user-select: text !important;
+    }
+`;
+document.head.appendChild(style);
