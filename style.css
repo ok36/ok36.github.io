@@ -841,66 +841,112 @@ body.theme-dark .content-item {
 
 /* 文章内部文本的样式 */
 /* NOTE 样式 */
-        .note {
-            background-color: #f1f1f1; /* 浅灰色 */
-            padding: 10px;
-            border-left: 3px solid #ccc;
-            margin: 10px 0;
-        }
-        /* TIP 样式 */
-        .tip {
-            background-color: #e6e6ff; /* 浅紫色 */
-            padding: 10px;
-            border-left: 3px solid #999;
-            margin: 10px 0;
-        }
-        /* IMPORTANT 样式 */
-        .important {
-            background-color: #f9f0ff; /* 浅粉色（柔和） */
-            padding: 10px;
-            border-left: 3px solid #c788ff;
-            margin: 10px 0;
-        }
-        /* WARNING 样式 */
-        .warning {
-            background-color: #fff9e6; /* 浅黄色 */
-            padding: 10px;
-            border-left: 3px solid #ffd54f;
-            margin: 10px 0;
-        }
-        /* CAUTION 样式 */
-        .caution {
-            background-color: #ffe6e6; /* 浅红色 */
-            padding: 10px;
-            border-left: 3px solid #ff9e9e;
-            margin: 10px 0;
-        }
-		
-		/* 定义不同颜色的底纹样式，带有圆角效果 */
-		.yellow {
-		    background-color: #fff9c4;
-		    padding: 1px 3px;
-		    border-radius: 4px;
-		    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-		}
-		
-		.blue {
-		    background-color: #bbdefb;
-		    padding: 1px 3px;
-		    border-radius: 4px;
-		    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-		}
-		
-		.green {
-		    background-color: #c8e6c9;
-		    padding: 1px 3px;
-		    border-radius: 4px;
-		    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-		}
-		
-		.pink {
-		    background-color: #f8bbd0;
-		    padding: 1px 3px;
-		    border-radius: 4px;
-		    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-		}
+.note {
+	background-color: #f1f1f1; /* 浅灰色 */
+	padding: 10px;
+	border-left: 3px solid #ccc;
+	margin: 10px 0;
+}
+/* TIP 样式 */
+.tip {
+	background-color: #e6e6ff; /* 浅紫色 */
+	padding: 10px;
+	border-left: 3px solid #999;
+	margin: 10px 0;
+}
+/* IMPORTANT 样式 */
+.important {
+	background-color: #f9f0ff; /* 浅粉色（柔和） */
+	padding: 10px;
+	border-left: 3px solid #c788ff;
+	margin: 10px 0;
+}
+/* WARNING 样式 */
+.warning {
+	background-color: #fff9e6; /* 浅黄色 */
+	padding: 10px;
+	border-left: 3px solid #ffd54f;
+	margin: 10px 0;
+}
+/* CAUTION 样式 */
+.caution {
+	background-color: #ffe6e6; /* 浅红色 */
+	padding: 10px;
+	border-left: 3px solid #ff9e9e;
+	margin: 10px 0;
+}
+
+/* 定义不同颜色的底纹样式，带有圆角效果 */
+.yellow {
+	background-color: #fff9c4;
+	padding: 1px 3px;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.blue {
+	background-color: #bbdefb;
+	padding: 1px 3px;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.green {
+	background-color: #c8e6c9;
+	padding: 1px 3px;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.pink {
+	background-color: #f8bbd0;
+	padding: 1px 3px;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* 题目与答案。 */
+.question-container {
+	background-color: white;
+	border-radius: 12px;
+	padding: 16px;
+	margin-bottom: 16px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.question {
+	font-weight: 500;
+	margin-bottom: 12px;
+}
+.answer-btn {
+	display: inline-block;
+	padding: 8px 16px;
+	background-color: #007aff;
+	color: white;
+	border-radius: 8px;
+	font-size: 15px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	-webkit-tap-highlight-color: transparent;
+}
+.answer-btn:active {
+	background-color: #0062cc;
+	transform: scale(0.98);
+}
+.answer {
+	margin-top: 12px;
+	padding: 12px;
+	background-color: #c8e6c9;
+	border-radius: 8px;
+	display: none;
+	animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(-5px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+.blank {
+	text-decoration: underline;
+	color: #007aff;
+	font-weight: bold;
+}

@@ -526,3 +526,25 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+//题目与答案。
+document.addEventListener('DOMContentLoaded', function() {
+            const answerButtons = document.querySelectorAll('.answer-btn');
+            
+            answerButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                    
+                    // 添加触觉反馈（在支持的设备上）
+                    if (window.navigator && window.navigator.vibrate) {
+                        window.navigator.vibrate(10);
+                    }
+                });
+            });
+        });
