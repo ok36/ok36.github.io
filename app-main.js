@@ -291,6 +291,7 @@ class SearchModule {
         }
         
         this.updatePaginationControls();
+        this.bindAnswerButtons(); // 每次显示新页面时重新绑定答案按钮
         
         // 更新URL参数但不刷新页面
         const params = new URLSearchParams(window.location.search);
@@ -337,6 +338,21 @@ class SearchModule {
         Utils.addEvent(Utils.getElement('go-page'), 'click', () => this.handlePageJump());
         Utils.addEvent(Utils.getElement('page-input'), 'keypress', (e) => {
             if (e.key === 'Enter') this.handlePageJump();
+        });
+    }
+    
+    bindAnswerButtons() {
+        const answerButtons = document.querySelectorAll('.answer-btn');
+        answerButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                
+                // 添加触觉反馈（在支持的设备上）
+                if (window.navigator && window.navigator.vibrate) {
+                    window.navigator.vibrate(10);
+                }
+            });
         });
     }
     
@@ -403,22 +419,30 @@ const initSettings = () => {
     setBodyClass('theme', savedTheme);
     
     // 设置事件监听
-    Utils.addEvent(Utils.getElement('settings-btn'), 'click', (e) => {
+    Utils.addEvent(settingsBtn, 'click', (e) => {
         e.stopPropagation();
-        Utils.toggleClass(Utils.getElement('settings-panel'), 'show');
+        Utils.toggleClass(settingsPanel, 'show');
     });
     
-    Utils.addEvent(Utils.getElement('font-size-select'), 'change', (e) => 
+    // 初始化下拉框选中状态
+    document.getElementById('font-size-select').value = savedFontSize;
+    document.getElementById('theme-select').value = savedTheme;
+    
+    Utils.addEvent(document.getElementById('font-size-select'), 'change', (e) => 
         setBodyClass('font', e.target.value));
     
-    Utils.addEvent(Utils.getElement('theme-select'), 'change', (e) => 
+    Utils.addEvent(document.getElementById('theme-select'), 'change', (e) => 
         setBodyClass('theme', e.target.value));
     
-    Utils.addEvent(document, 'click', () => 
-        Utils.removeClass(Utils.getElement('settings-panel'), 'show'));
+    // 点击其他地方关闭设置面板
+    Utils.addEvent(document, 'click', (e) => {
+        if (!settingsPanel.contains(e.target) && e.target !== settingsBtn) {
+            Utils.removeClass(settingsPanel, 'show');
+        }
+    });
     
-    Utils.addEvent(Utils.getElement('settings-panel'), 'click', (e) => 
-        e.stopPropagation());
+    // 阻止设置面板内的点击事件冒泡
+    Utils.addEvent(settingsPanel, 'click', (e) => e.stopPropagation());
 };
 
 // 初始化所有功能
@@ -503,8 +527,11 @@ document.addEventListener('touchend', function(e) {
 
 // 禁用鼠标拖拽选择
 document.addEventListener('mousedown', function(e) {
-    e.preventDefault();
-    return false;
+    // 排除设置按钮和设置面板中的元素
+    if (!e.target.closest('#settings-btn') && !e.target.closest('#settings-panel')) {
+        e.preventDefault();
+        return false;
+    }
 }, true);
 
 // 为所有元素添加样式，防止文本选择
@@ -515,36 +542,48 @@ style.textContent = `
         -moz-user-select: none !important;
         -ms-user-select: none !important;
         user-select: none !important;
+    }
+    
+    /* 确保设置按钮和面板可以交互 */
+    #settings-btn, #settings-panel, #settings-panel * {
+        -webkit-user-select: auto !important;
+        -moz-user-select: auto !important;
+        -ms-user-select: auto !important;
+        user-select: auto !important;
         pointer-events: auto !important;
     }
-    /* 确保输入框仍然可以使用（如果需要） */
-    input, textarea {
+    
+    /* 确保输入框和下拉列表仍然可以使用 */
+    input, textarea, select {
         -webkit-user-select: text !important;
         -moz-user-select: text !important;
         -ms-user-select: text !important;
         user-select: text !important;
+        pointer-events: auto !important;
+    }
+    
+    /* 设置面板中的选项 */
+    .setting-option, .setting-option * {
+        -webkit-user-select: auto !important;
+        -moz-user-select: auto !important;
+        -ms-user-select: auto !important;
+        user-select: auto !important;
+        pointer-events: auto !important;
+    }
+    
+    /* 答案按钮和内容 */
+    .answer-btn, .answer {
+        pointer-events: auto !important;
+    }
+    
+    /* 搜索功能相关元素 */
+    .search-container, .search-container * {
+        pointer-events: auto !important;
+    }
+    
+    /* 分页控件 */
+    .pagination-controls, .pagination-controls * {
+        pointer-events: auto !important;
     }
 `;
 document.head.appendChild(style);
-
-//题目与答案。
-document.addEventListener('DOMContentLoaded', function() {
-            const answerButtons = document.querySelectorAll('.answer-btn');
-            
-            answerButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const answer = this.nextElementSibling;
-                    
-                    if (answer.style.display === 'block') {
-                        answer.style.display = 'none';
-                    } else {
-                        answer.style.display = 'block';
-                    }
-                    
-                    // 添加触觉反馈（在支持的设备上）
-                    if (window.navigator && window.navigator.vibrate) {
-                        window.navigator.vibrate(10);
-                    }
-                });
-            });
-        });
