@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+   <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+       <link rel="stylesheet" href="style.css">
+       <title>专升本计算机-王老师</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .math {
+            font-family: "Times New Roman", serif;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #33CC00;
+        }
+        .note {
+            background-color: #ffffcc;
+            padding: 10px;
+            border-left: 4px solid #ffeb3b;
+            margin: 15px 0;
+        }
+        .center {
+            text-align: center;
+        }
+        .green {
+            color: #33CC00;
+        }
+    </style>
+</head>
+<body class="theme-default font-medium">
+    <div id="mulu-overlay" class="mulu-overlay"></div>
+        
+    <!-- 目录菜单 -->
+    <div id="mulu-menu" class="mulu-menu">
+        <div class="mulu-header">
+            <h3><i class="fas fa-book"></i> 专升本计算机目录</h3>
+            <button class="mulu-close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mulu-content">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="jsj-01.html"><i class="fas fa-file-alt"></i> 第1章 信息技术与计算机文化</a></li>
+                <li><a href="jsj-02.html"><i class="fas fa-file-alt"></i> 第2章 Windows 10操作系统</a></li>
+				<li><a href="jsj-03.html"><i class="fas fa-file-alt"></i> 第3章 字处理软件Word 2016</a></li>
+                <li><a href="jsj-04.html"><i class="fas fa-file-alt"></i> 第4章 电子表格系统Excel 2016</a></li>
+                <li><a href="jsj-05.html"><i class="fas fa-file-alt"></i> 第5章 PowerPoint 2016</a></li>
+                <li><a href="jsj-06.html"><i class="fas fa-file-alt"></i> 第6章 计算机网络及网页制作</a></li>
+                <li><a href="jsj-07.html"><i class="fas fa-file-alt"></i> 第7章 数字多媒体技术基础</a></li>
+                <li><a href="jsj-08.html"><i class="fas fa-file-alt"></i> 第8章 信息安全</a></li>
+                <li><a href="jsj-09.html"><i class="fas fa-user"></i> 第9章 信息技术前沿</a></li>
+                <li><a href="jsj-10.html"><i class="fas fa-user-edit"></i> 新大纲</a></li>
+                <li><a href="#"><i class="fas fa-user-edit"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <h1 class="page-title">
+        <button id="mulu-btn" class="mulu-btn"><i class="fas fa-list"></i></button>跟着王老师学计算机
+    </h1>
+    <!-- 内容区域 -->
+	<div class="header">
+		<h3>第1章 信息技术与计算机文化</h3>
+		<h6>听懂+理解+划书+做题→飞得更高</h6>
+	</div>
+	
+    <div id="content">
+		<div class="content-item" data-index="1-55">
+			<h3>1.3.2不同进制数之间的转化</h3>
+
+			<h2>相关术语：<a href="jsj-01.html">返回来时的路</a></h2>
+
+			<p>1.数码：一组用来表示某种数制的符号</p>
+			<p>2.基数：数制所使用的数码的个数</p>
+			<p>3.位权：数码在不同位置上的权值</p>
+
+			<p>十进制数各位的位权</p>
+
+			<table>
+				<tr>
+					<th>项目367.5</th>
+					<th>位权</th>
+					<th>值</th>
+				</tr>
+				<tr>
+					<td>百位(3)</td>
+					<td>10<sup>2</sup></td>
+					<td>100</td>
+				</tr>
+				<tr>
+					<td>十位(6)</td>
+					<td>10<sup>1</sup></td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>个位(7)</td>
+					<td>10<sup>0</sup></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>小数位(5)</td>
+					<td>10<sup>-1</sup></td>
+					<td>0.1</td>
+				</tr>
+			</table>
+
+			<p><strong>二进制数各位的位权</strong></p>
+
+			<table>
+				<tr>
+					<th>位数</th>
+					<th>位权</th>
+					<th>值</th>
+				</tr>
+				<tr>
+					<td>第7位</td>
+					<td>2<sup>7</sup></td>
+					<td>128</td>
+				</tr>
+				<tr>
+					<td>第6位</td>
+					<td>2<sup>6</sup></td>
+					<td>64</td>
+				</tr>
+				<tr>
+					<td>第5位</td>
+					<td>2<sup>5</sup></td>
+					<td>32</td>
+				</tr>
+				<tr>
+					<td>第4位</td>
+					<td>2<sup>4</sup></td>
+					<td>16</td>
+				</tr>
+				<tr>
+					<td>第3位</td>
+					<td>2<sup>3</sup></td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<td>第2位</td>
+					<td>2<sup>2</sup></td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>第1位</td>
+					<td>2<sup>1</sup></td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>第0位</td>
+					<td>2<sup>0</sup></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>小数点后第1位</td>
+					<td>2<sup>-1</sup></td>
+					<td>½</td>
+				</tr>
+				<tr>
+					<td>小数点后第2位</td>
+					<td>2<sup>-2</sup></td>
+					<td>¼</td>
+				</tr>
+				<tr>
+					<td>小数点后第3位</td>
+					<td>2<sup>-3</sup></td>
+					<td>⅛</td>
+				</tr>
+			</table>
+
+			<!-- 其余内容保持不变 -->
+			<h2>一、非十进制数转化为十进制数</h2>
+
+			<p>方法：按位权展开求和</p>
+
+			<p>例1：<code>二</code>进制数转化为<code>十</code>进制数</p>
+			<div class="math">
+				(1101.11)<sub>2</sub> = 1×2<sup>3</sup> + 1×2<sup>2</sup> + 0×2<sup>1</sup> + 1×2<sup>0</sup> + 1×2<sup>-1</sup> + 1×2<sup>-2</sup><br>
+				= 8 + 4 + 0 + 1 + 0.5 + 0.25<br>
+				= (13.75)<sub>10</sub>
+			</div>
+
+			<p>例2：<code>八</code>进制数转化为<code>十</code>进制数</p>
+			<div class="math">
+				(36.5)<sub>8</sub> = 3×8<sup>1</sup> + 6×8<sup>0</sup> + 5×8<sup>-1</sup><br>
+				= 24 + 6 + 0.625<br>
+				= (30.625)<sub>10</sub>
+			</div>
+
+			<p>例3：<code>十六</code>进制数转化为<code>十</code>进制数</p>
+			<div class="math">
+				(2D.C)<sub>16</sub> = 2×16<sup>1</sup> + D×16<sup>0</sup> + C×16<sup>-1</sup><br>
+				= 32 + 13 + 0.75<br>
+				= (45.75)<sub>10</sub>
+			</div>
+
+			<h2>二、十进制数转化为非十进制数</h2>
+
+			<div class="note">
+				<strong>注意：</strong>（整数部分，小数部分用不同的方法转化）
+			</div>
+
+			<p>1.整数部分方法：采用<code>除基取余</code>法。直到商为<code>0</code>为止，把得到的余数<code>倒排</code></p>
+
+			<p>例1：<code>十</code>进制数<code>整数</code>转化为<code>二</code>进制数</p>
+			<div class="math">
+				(25)<sub>10</sub> = (11001)<sub>2</sub><br>
+				25 ÷ 2 = 商12余数1<br>
+				12 ÷ 2 = 商6余数0<br>
+				6 ÷ 2 = 商3余数0<br>
+				3 ÷ 2 = 商1余数1<br>
+				1 ÷ 2 = 商0余数1
+			</div>
+
+			<p>例2：<code>十</code>进制数<code>整数</code>转化为<code>八</code>进制数</p>
+			<div class="math">
+				(25)<sub>10</sub> = (31)<sub>8</sub><br>
+				25 ÷ 8 = 商3余数1<br>
+				3 ÷ 8 = 商0余数3
+			</div>
+
+			<p>例3：<code>十</code>进制数<code>整数</code>转化为<code>十六</code>进制数</p>
+			<div class="math">
+				(25)<sub>10</sub> = (19)<sub>16</sub><br>
+				25 ÷ 16 = 商1余数9<br>
+				1 ÷ 16 = 商0余数1
+			</div>
+
+			<p>2.小数部分方法：采用<code>乘基取整</code>法。把得到的整数正排</p>
+
+			<p>例1：<code>十</code>进制<code>小数</code>数转化为<code>二</code>进制数</p>
+			<div class="math">
+				(0.75)<sub>10</sub> = (0.11)<sub>2</sub><br>
+				0.75×2 = 1.5 取整数1<br>
+				0.5×2 = 1.0 取整数1
+			</div>
+
+			<div class="math">
+				(0.25)<sub>10</sub> = (0.01)<sub>2</sub><br>
+				0.25×2 = 0.5 取整数0<br>
+				0.5×2 = 1.0 取整数1
+			</div>
+
+			<p>例2：<code>十</code>进制<code>小数</code>数转化为<code>八</code>进制数</p>
+			<div class="math">
+				(0.75)<sub>10</sub> = (0.6)<sub>8</sub><br>
+				0.75×8 = 6.0 取整数6
+			</div>
+
+			<div class="math">
+				(0.25)<sub>10</sub> = (0.2)<sub>8</sub><br>
+				0.25×8 = 2.0 取整数2
+			</div>
+
+			<p>例3：<code>十</code>进制<code>小数</code>数转化为<code>十六</code>进制数</p>
+			<div class="math">
+				(0.75)<sub>10</sub> = (0.C)<sub>16</sub><br>
+				0.75×16 = 12.0 取整数12
+			</div>
+
+			<div class="math">
+				(0.25)<sub>10</sub> = (0.4)<sub>16</sub><br>
+				0.25×16 = 4.0 取整数4
+			</div>
+
+			<div class="note">
+				<strong>注意：</strong>并非所有十进制小数都能都能准确的转化为非十进制数
+			</div>
+
+			<p>例：<code>十</code>进制<code>小数0.33</code>数转化为<code>二进制数</code>进制数</p>
+			<div class="math">
+				(0.33)<sub>10</sub> = (0.010101)<sub>2</sub><br>
+				0.33×2 = 0.66 取整数0<br>
+				0.66×2 = 1.32 取整数1<br>
+				0.32×2 = 0.64 取整数0<br>
+				0.64×2 = 1.28 取整数1<br>
+				0.28×2 = 0.56 取整数0<br>
+				0.56×2 = 1.12 取整数1<br>
+				……… ………
+			</div>
+
+			<h2>三、非十进制数之间的转化</h2>
+
+			<p>例1：<code>二</code>进制数转化为<code>八</code>进制数(421)</p>
+			<div class="math">
+				(10 110 101 100.01)<sub>2</sub> = (2654.2)<sub>8</sub>
+			</div>
+
+			<p>例2：<code>二</code>进制数转化为<code>十六</code>进制数(8421)</p>
+			<div class="math">
+				(10 1100 1011 0110.011)<sub>2</sub> = (2CB6.6)<sub>16</sub>
+			</div>
+
+			<p>例3：<code>八</code>进制数转化为<code>二</code>进制数(421)</p>
+			<div class="math">
+				(365.4)<sub>8</sub> = (011 110 101.100)<sub>2</sub><br>
+				= (11110101.1)<sub>2</sub>
+			</div>
+
+			<p>例4：<code>十六</code>进制数转化为<code>二</code>进制数(8421)</p>
+			<div class="math">
+				(9C7.6)<sub>16</sub> = (1001 1100 0111.0110)<sub>2</sub><br>
+				= (100111000111.011)<sub>2</sub>
+			</div>
+
+			<p>例5：<code>十六</code>进制数与<code>八</code>进制数之间不能直接转化，需要先将其转化为<code>二</code>进制数才行。</p>
+
+			<div class="center">
+				<p class="green"><b>(完)</b></p>
+				<p class="green"><b><a href="jsj-01.html">返回来时的路</a></p>
+			</div>
+		</div>
+	</div>
+    <script src="app-main.js"></script>
+</body>
+</html>
