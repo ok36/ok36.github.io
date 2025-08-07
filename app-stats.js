@@ -81,8 +81,8 @@ function updateOnlineUsers() {
     // 更新或添加当前用户
     onlineUsers[userId] = now;
 
-    // 清理超过5分钟不活跃的用户
-    const activeThreshold = now - 5 * 60 * 1000; // 5分钟
+    // 清理超过25分钟不活跃的用户
+    const activeThreshold = now - 25 * 60 * 1000; // 5分钟
     Object.keys(onlineUsers).forEach(key => {
         if (onlineUsers[key] < activeThreshold) {
             delete onlineUsers[key];
