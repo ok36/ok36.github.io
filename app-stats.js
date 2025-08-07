@@ -22,22 +22,10 @@ function calculateDaysLeft() {
 }
 
 // 在线人数统计系统
-const ONLINE_USERS_KEY = 'ok36_online_users_v2';
-const HEARTBEAT_INTERVAL = 30 * 1000; // 30秒心跳
-const MAX_IDLE_TIME = 60 * 60 * 1000; // 60分钟不活跃视为离线
-const SITES = [
-    'ok36.github.io',
-    'ok36-github-io.pages.dev',
-    'ok36.netlify.app',
-    'ok36.pages.dev',
-    'ok39.netlify.app',
-    'ok36.neocities.org'
+const SUPPORTED_PATHS = [
+    '/app-index.html',
+    '/appdl-index.html'
 ];
-
-// 检查当前域名是否在支持的列表中
-function isSupportedSite() {
-    return SITES.includes(window.location.hostname);
-}
 
 // 生成唯一用户ID
 function generateUserId() {
@@ -61,64 +49,70 @@ function updateOnlineCountDisplay(count) {
     document.getElementById('online-count').textContent = adjustedCount;
 }
 
-// 获取在线用户数据
-function getOnlineUsers() {
-    try {
-        const data = localStorage.getItem(ONLINE_USERS_KEY);
-        return data ? JSON.parse(data) : {};
-    } catch (e) {
-        return {};
-    }
+// 检查是否支持的页面
+function isSupportedPage() {
+    return SUPPORTED_PATHS.includes(window.location.pathname);
 }
 
-// 更新在线用户数据
-function updateOnlineUsers() {
-    if (!isSupportedSite()) {
+// 通过Service Worker统计在线人数
+function initOnlineCount() {
+    if (!isSupportedPage()) {
         updateOnlineCountDisplay(Math.floor(Math.random() * 50) + 20);
         return;
     }
 
     const userId = getOrCreateUserId();
-    const now = Date.now();
-    let onlineUsers = getOnlineUsers();
-
-    // 更新当前用户
-    onlineUsers[userId] = now;
-
-    // 清理不活跃用户
-    Object.keys(onlineUsers).forEach(key => {
-        if (now - onlineUsers[key] > MAX_IDLE_TIME) {
-            delete onlineUsers[key];
-        }
-    });
-
-    // 保存数据
-    try {
-        localStorage.setItem(ONLINE_USERS_KEY, JSON.stringify(onlineUsers));
-        updateOnlineCountDisplay(Object.keys(onlineUsers).length);
-    } catch (e) {
-        // 存储失败时使用随机数
-        updateOnlineCountDisplay(Math.floor(Math.random() * 30) + 20);
+    
+    // 注册Service Worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then(() => {
+                // 发送心跳
+                sendHeartbeat(userId);
+                
+                // 获取在线人数
+                getOnlineCount();
+                
+                // 设置定时器
+                setInterval(() => sendHeartbeat(userId), 30 * 1000);
+                setInterval(getOnlineCount, 60 * 1000);
+            })
+            .catch(() => {
+                // 回退方案
+                updateOnlineCountDisplay(Math.floor(Math.random() * 50) + 20);
+            });
+    } else {
+        // 不支持Service Worker的回退方案
+        updateOnlineCountDisplay(Math.floor(Math.random() * 50) + 20);
     }
 }
 
-// 初始化在线人数统计
-function initOnlineCount() {
-    // 初始更新
-    updateOnlineUsers();
+// 发送心跳到Service Worker
+function sendHeartbeat(userId) {
+    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+        navigator.serviceWorker.controller.postMessage({
+            type: 'heartbeat',
+            userId: userId,
+            timestamp: Date.now()
+        });
+    }
+}
 
-    // 设置定时器
-    const timer = setInterval(updateOnlineUsers, HEARTBEAT_INTERVAL);
-
-    // 页面可见性变化时更新
-    document.addEventListener('visibilitychange', () => {
-        if (!document.hidden) {
-            updateOnlineUsers();
-        }
-    });
-
-    // 页面卸载前更新
-    window.addEventListener('beforeunload', updateOnlineUsers);
+// 从Service Worker获取在线人数
+function getOnlineCount() {
+    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+        const channel = new MessageChannel();
+        
+        channel.port1.onmessage = (event) => {
+            if (event.data.type === 'online_count') {
+                updateOnlineCountDisplay(event.data.count);
+            }
+        };
+        
+        navigator.serviceWorker.controller.postMessage({
+            type: 'get_online_count'
+        }, [channel.port2]);
+    }
 }
 
 // 页面加载时初始化
