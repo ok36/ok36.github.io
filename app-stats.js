@@ -21,11 +21,10 @@ function calculateDaysLeft() {
     document.getElementById('days-left').textContent = diffDays > 0 ? diffDays : 0;
 }
 
-// 在线人数统计系统
-const SUPPORTED_PATHS = [
-    '/app-index.html',
-    '/appdl-index.html'
-];
+// 在线人数统计系统 (1小时内活跃用户)
+const ONLINE_EXPIRATION = 60 * 60 * 1000; // 1小时(毫秒)
+const ONLINE_STORAGE_KEY = 'ok36_online_users';
+const HEARTBEAT_INTERVAL = 5 * 60 * 1000; // 5分钟
 
 // 生成唯一用户ID
 function generateUserId() {
@@ -42,77 +41,80 @@ function getOrCreateUserId() {
     return userId;
 }
 
+// 更新在线用户列表
+function updateOnlineUsers(userId) {
+    const now = Date.now();
+    let onlineUsers = JSON.parse(localStorage.getItem(ONLINE_STORAGE_KEY) || '{}');
+    
+    // 清理过期用户
+    Object.keys(onlineUsers).forEach(id => {
+        if (now - onlineUsers[id] > ONLINE_EXPIRATION) {
+            delete onlineUsers[id];
+        }
+    });
+    
+    // 更新当前用户
+    onlineUsers[userId] = now;
+    
+    localStorage.setItem(ONLINE_STORAGE_KEY, JSON.stringify(onlineUsers));
+    return Object.keys(onlineUsers).length;
+}
+
+// 获取当前在线人数
+function getOnlineCount() {
+    const now = Date.now();
+    const onlineUsers = JSON.parse(localStorage.getItem(ONLINE_STORAGE_KEY) || '{}');
+    
+    // 清理过期用户并计数
+    let count = 0;
+    Object.keys(onlineUsers).forEach(id => {
+        if (now - onlineUsers[id] <= ONLINE_EXPIRATION) {
+            count++;
+        } else {
+            delete onlineUsers[id];
+        }
+    });
+    
+    // 更新存储
+    localStorage.setItem(ONLINE_STORAGE_KEY, JSON.stringify(onlineUsers));
+    
+    return count;
+}
+
 // 更新在线人数显示
-function updateOnlineCountDisplay(count) {
+function updateOnlineCountDisplay() {
     const baseCount = 20; // 基础人数
-    const adjustedCount = Math.max(baseCount, count); // 确保不低于基础人数
+    const actualCount = getOnlineCount();
+    const adjustedCount = Math.max(baseCount, actualCount); // 确保不低于基础人数
     document.getElementById('online-count').textContent = adjustedCount;
 }
 
-// 检查是否支持的页面
-function isSupportedPage() {
-    return SUPPORTED_PATHS.includes(window.location.pathname);
+// 发送心跳
+function sendHeartbeat(userId) {
+    const count = updateOnlineUsers(userId);
+    updateOnlineCountDisplay();
+    return count;
 }
 
-// 通过Service Worker统计在线人数
+// 初始化在线人数统计
 function initOnlineCount() {
-    if (!isSupportedPage()) {
-        updateOnlineCountDisplay(Math.floor(Math.random() * 50) + 20);
-        return;
-    }
-
     const userId = getOrCreateUserId();
     
-    // 注册Service Worker
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js')
-            .then(() => {
-                // 发送心跳
-                sendHeartbeat(userId);
-                
-                // 获取在线人数
-                getOnlineCount();
-                
-                // 设置定时器
-                setInterval(() => sendHeartbeat(userId), 30 * 1000);
-                setInterval(getOnlineCount, 60 * 1000);
-            })
-            .catch(() => {
-                // 回退方案
-                updateOnlineCountDisplay(Math.floor(Math.random() * 50) + 20);
-            });
-    } else {
-        // 不支持Service Worker的回退方案
-        updateOnlineCountDisplay(Math.floor(Math.random() * 50) + 20);
-    }
-}
-
-// 发送心跳到Service Worker
-function sendHeartbeat(userId) {
-    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-        navigator.serviceWorker.controller.postMessage({
-            type: 'heartbeat',
-            userId: userId,
-            timestamp: Date.now()
-        });
-    }
-}
-
-// 从Service Worker获取在线人数
-function getOnlineCount() {
-    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-        const channel = new MessageChannel();
-        
-        channel.port1.onmessage = (event) => {
-            if (event.data.type === 'online_count') {
-                updateOnlineCountDisplay(event.data.count);
-            }
-        };
-        
-        navigator.serviceWorker.controller.postMessage({
-            type: 'get_online_count'
-        }, [channel.port2]);
-    }
+    // 立即发送第一次心跳
+    sendHeartbeat(userId);
+    
+    // 设置定时器：定期发送心跳
+    setInterval(() => sendHeartbeat(userId), HEARTBEAT_INTERVAL);
+    
+    // 设置定时器：每分钟更新显示
+    setInterval(updateOnlineCountDisplay, 60 * 1000);
+    
+    // 监听页面可见性变化
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+            sendHeartbeat(userId);
+        }
+    });
 }
 
 // 页面加载时初始化
