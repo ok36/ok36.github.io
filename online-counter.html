@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Counter</title>
+    <script>
+        const ONLINE_USERS_KEY = 'ok36_online_users';
+        const SITES = [
+            'ok36.github.io',
+            'ok36-github-io.pages.dev',
+            'ok36.netlify.app',
+            'ok36.pages.dev',
+            'ok39.netlify.app',
+            'ok36.neocities.org'
+        ];
+
+        // 获取或初始化在线用户数据
+        function getOnlineUsers() {
+            const data = localStorage.getItem(ONLINE_USERS_KEY);
+            return data ? JSON.parse(data) : {};
+        }
+
+        // 更新在线用户数据
+        function updateOnlineUsers(userId, timestamp) {
+            const onlineUsers = getOnlineUsers();
+            onlineUsers[userId] = timestamp;
+            
+            // 清理超过60分钟不活跃的用户
+            const now = Date.now();
+            Object.keys(onlineUsers).forEach(key => {
+                if (now - onlineUsers[key] > 60 * 60 * 1000) {
+                    delete onlineUsers[key];
+                }
+            });
+
+            localStorage.setItem(ONLINE_USERS_KEY, JSON.stringify(onlineUsers));
+            return Object.keys(onlineUsers).length;
+        }
+
+        // 监听来自父窗口的消息
+        window.addEventListener('message', (event) => {
+            if (!SITES.includes(event.origin.replace(/^https?:\/\//, ''))) return;
+            
+            if (event.data.type === 'heartbeat') {
+                const count = updateOnlineUsers(event.data.userId, event.data.timestamp);
+                // 返回当前在线人数
+                event.source.postMessage({
+                    type: 'online_count',
+                    count: count
+                }, event.origin);
+            }
+        });
+
+        // 初始加载时清理过期用户
+        (function init() {
+            const onlineUsers = getOnlineUsers();
+            const now = Date.now();
+            let hasChanges = false;
+            
+            Object.keys(onlineUsers).forEach(key => {
+                if (now - onlineUsers[key] > 60 * 60 * 1000) {
+                    delete onlineUsers[key];
+                    hasChanges = true;
+                }
+            });
+
+            if (hasChanges) {
+                localStorage.setItem(ONLINE_USERS_KEY, JSON.stringify(onlineUsers));
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- 这个页面仅用于统计，不需要显示内容 -->
+</body>
+</html>

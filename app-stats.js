@@ -22,8 +22,7 @@ function calculateDaysLeft() {
 }
 
 // 在线人数统计系统
-const ONLINE_USERS_KEY = 'online_users_data';
-const CHANNEL_NAME = 'online_users_channel';
+const ONLINE_USERS_KEY = 'ok36_online_users';
 const SITES = [
     'ok36.github.io',
     'ok36-github-io.pages.dev',
@@ -32,6 +31,7 @@ const SITES = [
     'ok39.netlify.app',
     'ok36.neocities.org'
 ];
+const IFRAME_URL = 'https://ok36.github.io/online-counter.html'; // 选择一个主站点作为统计中心
 
 // 检查当前域名是否在支持的列表中
 function isSupportedSite() {
@@ -45,18 +45,12 @@ function generateUserId() {
 
 // 获取或创建用户ID
 function getOrCreateUserId() {
-    let userId = localStorage.getItem('online_user_id');
+    let userId = localStorage.getItem('ok36_user_id');
     if (!userId) {
         userId = generateUserId();
-        localStorage.setItem('online_user_id', userId);
+        localStorage.setItem('ok36_user_id', userId);
     }
     return userId;
-}
-
-// 获取当前在线用户数据
-function getOnlineUsers() {
-    const data = localStorage.getItem(ONLINE_USERS_KEY);
-    return data ? JSON.parse(data) : {};
 }
 
 // 更新在线人数显示
@@ -66,80 +60,63 @@ function updateOnlineCountDisplay(count) {
     document.getElementById('online-count').textContent = adjustedCount;
 }
 
-// 更新在线用户数据
-function updateOnlineUsers() {
-    if (!isSupportedSite()) {
-        // 不在支持列表中，使用随机数
-        updateOnlineCountDisplay(Math.floor(Math.random() * 50) + 20);
-        return;
-    }
+// 创建跨域通信的iframe
+function createCounterIframe() {
+    const iframe = document.createElement('iframe');
+    iframe.src = IFRAME_URL;
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    return iframe;
+}
 
-    const userId = getOrCreateUserId();
-    const now = Date.now();
-    const onlineUsers = getOnlineUsers();
-
-    // 更新或添加当前用户
-    onlineUsers[userId] = now;
-
-    // 清理超过25分钟不活跃的用户
-    const activeThreshold = now - 25 * 60 * 1000; // 5分钟
-    Object.keys(onlineUsers).forEach(key => {
-        if (onlineUsers[key] < activeThreshold) {
-            delete onlineUsers[key];
-        }
-    });
-
-    // 保存更新后的数据
-    localStorage.setItem(ONLINE_USERS_KEY, JSON.stringify(onlineUsers));
-    
-    // 广播更新
-    if (window.broadcastChannel) {
-        window.broadcastChannel.postMessage({ type: 'update', userId, timestamp: now });
-    }
-
-    // 更新显示
-    updateOnlineCountDisplay(Object.keys(onlineUsers).length);
+// 发送消息到iframe
+function sendMessageToIframe(iframe, message) {
+    iframe.contentWindow.postMessage(message, IFRAME_URL);
 }
 
 // 初始化在线人数统计
 function initOnlineCount() {
     if (!isSupportedSite()) {
-        updateOnlineUsers(); // 直接使用随机数
+        updateOnlineCountDisplay(Math.floor(Math.random() * 50) + 20);
         return;
     }
 
-    // 创建广播通道
-    try {
-        window.broadcastChannel = new BroadcastChannel(CHANNEL_NAME);
+    const userId = getOrCreateUserId();
+    const iframe = createCounterIframe();
 
-        // 监听其他标签页的消息
-        window.broadcastChannel.onmessage = (event) => {
-            if (event.data.type === 'update') {
-                const onlineUsers = getOnlineUsers();
-                onlineUsers[event.data.userId] = event.data.timestamp;
-                localStorage.setItem(ONLINE_USERS_KEY, JSON.stringify(onlineUsers));
-                updateOnlineCountDisplay(Object.keys(onlineUsers).length);
-            }
-        };
-    } catch (e) {
-        console.log('广播通道初始化失败:', e);
-    }
-
-    // 初始更新
-    updateOnlineUsers();
-
-    // 定期更新（每分钟）
-    setInterval(updateOnlineUsers, 60 * 1000);
-
-    // 页面可见性变化时更新
-    document.addEventListener('visibilitychange', () => {
-        if (!document.hidden) {
-            updateOnlineUsers();
+    // 监听来自iframe的消息
+    window.addEventListener('message', (event) => {
+        if (event.origin !== new URL(IFRAME_URL).origin) return;
+        if (event.data.type === 'online_count') {
+            updateOnlineCountDisplay(event.data.count);
         }
     });
 
-    // 页面卸载前更新
-    window.addEventListener('beforeunload', updateOnlineUsers);
+    // 定期发送心跳（每分钟）
+    function sendHeartbeat() {
+        sendMessageToIframe(iframe, {
+            type: 'heartbeat',
+            userId: userId,
+            timestamp: Date.now(),
+            site: window.location.hostname
+        });
+    }
+
+    // 初始心跳
+    sendHeartbeat();
+
+    // 设置定时器
+    const heartbeatInterval = setInterval(sendHeartbeat, 60 * 1000);
+
+    // 页面可见性变化时发送心跳
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+            sendHeartbeat();
+        }
+    });
+
+    // 页面卸载前发送心跳
+    window.addEventListener('beforeunload', sendHeartbeat);
 }
 
 // 页面加载时初始化
