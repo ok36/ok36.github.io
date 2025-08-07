@@ -22,7 +22,9 @@ function calculateDaysLeft() {
 }
 
 // 在线人数统计系统
-const ONLINE_USERS_KEY = 'ok36_online_users';
+const ONLINE_USERS_KEY = 'ok36_online_users_v2';
+const HEARTBEAT_INTERVAL = 30 * 1000; // 30秒心跳
+const MAX_IDLE_TIME = 60 * 60 * 1000; // 60分钟不活跃视为离线
 const SITES = [
     'ok36.github.io',
     'ok36-github-io.pages.dev',
@@ -31,7 +33,6 @@ const SITES = [
     'ok39.netlify.app',
     'ok36.neocities.org'
 ];
-const IFRAME_URL = 'https://ok36.github.io/online-counter.html'; // 选择一个主站点作为统计中心
 
 // 检查当前域名是否在支持的列表中
 function isSupportedSite() {
@@ -60,63 +61,64 @@ function updateOnlineCountDisplay(count) {
     document.getElementById('online-count').textContent = adjustedCount;
 }
 
-// 创建跨域通信的iframe
-function createCounterIframe() {
-    const iframe = document.createElement('iframe');
-    iframe.src = IFRAME_URL;
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
-    return iframe;
+// 获取在线用户数据
+function getOnlineUsers() {
+    try {
+        const data = localStorage.getItem(ONLINE_USERS_KEY);
+        return data ? JSON.parse(data) : {};
+    } catch (e) {
+        return {};
+    }
 }
 
-// 发送消息到iframe
-function sendMessageToIframe(iframe, message) {
-    iframe.contentWindow.postMessage(message, IFRAME_URL);
-}
-
-// 初始化在线人数统计
-function initOnlineCount() {
+// 更新在线用户数据
+function updateOnlineUsers() {
     if (!isSupportedSite()) {
         updateOnlineCountDisplay(Math.floor(Math.random() * 50) + 20);
         return;
     }
 
     const userId = getOrCreateUserId();
-    const iframe = createCounterIframe();
+    const now = Date.now();
+    let onlineUsers = getOnlineUsers();
 
-    // 监听来自iframe的消息
-    window.addEventListener('message', (event) => {
-        if (event.origin !== new URL(IFRAME_URL).origin) return;
-        if (event.data.type === 'online_count') {
-            updateOnlineCountDisplay(event.data.count);
+    // 更新当前用户
+    onlineUsers[userId] = now;
+
+    // 清理不活跃用户
+    Object.keys(onlineUsers).forEach(key => {
+        if (now - onlineUsers[key] > MAX_IDLE_TIME) {
+            delete onlineUsers[key];
         }
     });
 
-    // 定期发送心跳（每分钟）
-    function sendHeartbeat() {
-        sendMessageToIframe(iframe, {
-            type: 'heartbeat',
-            userId: userId,
-            timestamp: Date.now(),
-            site: window.location.hostname
-        });
+    // 保存数据
+    try {
+        localStorage.setItem(ONLINE_USERS_KEY, JSON.stringify(onlineUsers));
+        updateOnlineCountDisplay(Object.keys(onlineUsers).length);
+    } catch (e) {
+        // 存储失败时使用随机数
+        updateOnlineCountDisplay(Math.floor(Math.random() * 30) + 20);
     }
+}
 
-    // 初始心跳
-    sendHeartbeat();
+// 初始化在线人数统计
+function initOnlineCount() {
+    // 初始更新
+    updateOnlineUsers();
 
     // 设置定时器
-    const heartbeatInterval = setInterval(sendHeartbeat, 60 * 1000);
+    const timer = setInterval(updateOnlineUsers, HEARTBEAT_INTERVAL);
 
-    // 页面可见性变化时发送心跳
+    // 页面可见性变化时更新
     document.addEventListener('visibilitychange', () => {
         if (!document.hidden) {
-            sendHeartbeat();
+            updateOnlineUsers();
         }
     });
 
-    // 页面卸载前发送心跳
-    window.addEventListener('beforeunload', sendHeartbeat);
+    // 页面卸载前更新
+    window.addEventListener('beforeunload', updateOnlineUsers);
 }
 
 // 页面加载时初始化
