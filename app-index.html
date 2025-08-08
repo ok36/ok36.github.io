@@ -32,7 +32,7 @@
                 </div>
                 <div class="stat-box">
                     <h3>在线状态</h3>
-                    <p>现在学习人数<h3><span id="online-count">0</span></h3></p>
+                    <p>现在学习人数<h3><span id="online-count">统计中...</span></h3></p>
                 </div>
             </div>
             
@@ -45,5 +45,11 @@
     </div>
 
     <script src="app-stats.js"></script>
+    <script>
+        // 每分钟刷新在线人数统计
+        setInterval(function() {
+            updateOnlineCount();
+        }, 60000);
+    </script>
 </body>
 </html>
