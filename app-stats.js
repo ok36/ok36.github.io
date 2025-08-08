@@ -10,15 +10,25 @@ function updateLocalDate() {
         minute: '2-digit',
         hour12: false
     };
-    document.getElementById('current-date').textContent = `今天是 ${now.toLocaleDateString('zh-CN', options)}`;
-    document.getElementById('current-year').textContent = now.getFullYear();
+    const dateElement = document.getElementById('current-date');
+    if (dateElement) {
+        dateElement.textContent = `今天是 ${now.toLocaleDateString('zh-CN', options)}`;
+    }
+    
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = now.getFullYear();
+    }
 }
 
 // 计算剩余天数
 function calculateDaysLeft() {
     const targetDate = new Date('2026-03-21');
     const diffDays = Math.ceil((targetDate - new Date()) / (1000 * 60 * 60 * 24));
-    document.getElementById('days-left').textContent = diffDays > 0 ? diffDays : 0;
+    const daysLeftElement = document.getElementById('days-left');
+    if (daysLeftElement) {
+        daysLeftElement.textContent = diffDays > 0 ? diffDays : 0;
+    }
 }
 
 // 在线人数统计系统 (1小时内活跃用户)
@@ -86,7 +96,12 @@ function updateOnlineCountDisplay() {
     const baseCount = 20; // 基础人数
     const actualCount = getOnlineCount();
     const adjustedCount = Math.max(baseCount, actualCount); // 确保不低于基础人数
-    document.getElementById('online-count').textContent = adjustedCount;
+    
+    // 更新所有页面中的在线人数显示
+    const onlineCountElements = document.querySelectorAll('#online-count');
+    onlineCountElements.forEach(element => {
+        element.textContent = adjustedCount;
+    });
 }
 
 // 发送心跳
@@ -132,3 +147,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateLocalDate, 60000); // 每分钟更新时间
     setInterval(calculateDaysLeft, 86400000); // 每天更新倒计时
 });
+
+// 导出函数供其他页面使用
+window.appStats = {
+    updateOnlineCountDisplay,
+    getOnlineCount
+};
