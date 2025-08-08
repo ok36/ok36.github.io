@@ -20,9 +20,15 @@ function updateOnlineCount() {
     const storageKey = 'wanglaoshi_online_stats';
     const sessionKey = 'wanglaoshi_session_active';
     
+    // 获取当前小时
+    const currentHour = new Date().getHours();
+    
+    // 判断是否在凌晨0点到5点之间
+    const isMidnightToDawn = currentHour >= 0 && currentHour < 5;
+    
     // 基础在线人数和随机波动范围
-    const baseOnlineCount = 30;
-    const maxRandomAddition = 10;
+    const baseOnlineCount = isMidnightToDawn ? 0 : 30;
+    const maxRandomAddition = isMidnightToDawn ? 5 : 10; // 深夜波动范围减小
     
     // 获取或初始化统计数据
     let stats = JSON.parse(localStorage.getItem(storageKey)) || {
