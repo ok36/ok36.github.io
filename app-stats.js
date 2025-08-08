@@ -1,5 +1,65 @@
-// 显示本地时间
-function updateLocalDate() {
+// app-stats.js
+
+// 1. 倒计时功能
+function updateCountdown() {
+    // 假设考试日期是2026年3月21日（可以根据实际情况修改）
+    const examDate = new Date('2026-03-21T00:00:00');
+    const today = new Date();
+    
+    // 计算剩余天数
+    const timeDiff = examDate.getTime() - today.getTime();
+    const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+    
+    // 更新页面显示
+    document.getElementById('days-left').textContent = daysLeft;
+}
+
+// 2. 在线人数统计
+function updateOnlineCount() {
+    // 使用localStorage模拟在线人数统计
+    const storageKey = 'wanglaoshi_online_stats';
+    const sessionKey = 'wanglaoshi_session_active';
+    const baseOnlineCount = 30; // 基础在线人数
+    
+    // 获取当前存储的数据
+    let stats = JSON.parse(localStorage.getItem(storageKey)) || {
+        lastUpdate: 0,
+        onlineCount: baseOnlineCount,
+        totalSessions: 0
+    };
+    
+    // 检查会话是否已存在
+    const isNewSession = !sessionStorage.getItem(sessionKey);
+    
+    if (isNewSession) {
+        // 新会话
+        sessionStorage.setItem(sessionKey, 'active');
+        stats.totalSessions += 1;
+        
+        // 在基础人数上增加随机波动 (0-10人)
+        const randomAddition = Math.floor(Math.random() * 11);
+        stats.onlineCount = baseOnlineCount + randomAddition;
+        
+        // 设置过期时间 (15分钟后数据会重置)
+        stats.lastUpdate = Date.now();
+        localStorage.setItem(storageKey, JSON.stringify(stats));
+    } else {
+        // 已有会话，检查数据是否过期 (15分钟)
+        const fifteenMinutes = 15 * 60 * 1000;
+        if (Date.now() - stats.lastUpdate > fifteenMinutes) {
+            // 数据过期，重置为基数
+            stats.onlineCount = baseOnlineCount;
+            stats.lastUpdate = Date.now();
+            localStorage.setItem(storageKey, JSON.stringify(stats));
+        }
+    }
+    
+    // 更新页面显示
+    document.getElementById('online-count').textContent = stats.onlineCount;
+}
+
+// 3. 日期时间显示
+function updateDateTime() {
     const now = new Date();
     const options = { 
         year: 'numeric', 
@@ -8,148 +68,31 @@ function updateLocalDate() {
         weekday: 'long',
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false
+        second: '2-digit'
     };
-    const dateElement = document.getElementById('current-date');
-    if (dateElement) {
-        dateElement.textContent = `今天是 ${now.toLocaleDateString('zh-CN', options)}`;
-    }
     
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-        yearElement.textContent = now.getFullYear();
-    }
+    // 中文日期格式
+    const dateStr = now.toLocaleDateString('zh-CN', options);
+    
+    // 更新页面显示
+    document.getElementById('current-date').textContent = dateStr;
+    
+    // 更新版权年份
+    document.getElementById('current-year').textContent = now.getFullYear();
+    
+    // 每秒更新一次时间
+    setTimeout(updateDateTime, 1000);
 }
 
-// 计算剩余天数
-function calculateDaysLeft() {
-    const targetDate = new Date('2026-03-21');
-    const diffDays = Math.ceil((targetDate - new Date()) / (1000 * 60 * 60 * 24));
-    const daysLeftElement = document.getElementById('days-left');
-    if (daysLeftElement) {
-        daysLeftElement.textContent = diffDays > 0 ? diffDays : 0;
-    }
-}
-
-// 在线人数统计系统 (1小时内活跃用户)
-const ONLINE_EXPIRATION = 60 * 60 * 1000; // 1小时(毫秒)
-const ONLINE_STORAGE_KEY = 'ok36_online_users';
-const HEARTBEAT_INTERVAL = 5 * 60 * 1000; // 5分钟
-
-// 生成唯一用户ID
-function generateUserId() {
-    return 'user_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
-}
-
-// 获取或创建用户ID
-function getOrCreateUserId() {
-    let userId = localStorage.getItem('ok36_user_id');
-    if (!userId) {
-        userId = generateUserId();
-        localStorage.setItem('ok36_user_id', userId);
-    }
-    return userId;
-}
-
-// 更新在线用户列表
-function updateOnlineUsers(userId) {
-    const now = Date.now();
-    let onlineUsers = JSON.parse(localStorage.getItem(ONLINE_STORAGE_KEY) || '{}');
-    
-    // 清理过期用户
-    Object.keys(onlineUsers).forEach(id => {
-        if (now - onlineUsers[id] > ONLINE_EXPIRATION) {
-            delete onlineUsers[id];
-        }
-    });
-    
-    // 更新当前用户
-    onlineUsers[userId] = now;
-    
-    localStorage.setItem(ONLINE_STORAGE_KEY, JSON.stringify(onlineUsers));
-    return Object.keys(onlineUsers).length;
-}
-
-// 获取当前在线人数
-function getOnlineCount() {
-    const now = Date.now();
-    const onlineUsers = JSON.parse(localStorage.getItem(ONLINE_STORAGE_KEY) || '{}');
-    
-    // 清理过期用户并计数
-    let count = 0;
-    Object.keys(onlineUsers).forEach(id => {
-        if (now - onlineUsers[id] <= ONLINE_EXPIRATION) {
-            count++;
-        } else {
-            delete onlineUsers[id];
-        }
-    });
-    
-    // 更新存储
-    localStorage.setItem(ONLINE_STORAGE_KEY, JSON.stringify(onlineUsers));
-    
-    return count;
-}
-
-// 更新在线人数显示
-function updateOnlineCountDisplay() {
-    const baseCount = 20; // 基础人数
-    const actualCount = getOnlineCount();
-    const adjustedCount = Math.max(baseCount, actualCount); // 确保不低于基础人数
-    
-    // 更新所有页面中的在线人数显示
-    const onlineCountElements = document.querySelectorAll('#online-count');
-    onlineCountElements.forEach(element => {
-        element.textContent = adjustedCount;
-    });
-}
-
-// 发送心跳
-function sendHeartbeat(userId) {
-    const count = updateOnlineUsers(userId);
-    updateOnlineCountDisplay();
-    return count;
-}
-
-// 初始化在线人数统计
-function initOnlineCount() {
-    const userId = getOrCreateUserId();
-    
-    // 立即发送第一次心跳
-    sendHeartbeat(userId);
-    
-    // 设置定时器：定期发送心跳
-    setInterval(() => sendHeartbeat(userId), HEARTBEAT_INTERVAL);
-    
-    // 设置定时器：每分钟更新显示
-    setInterval(updateOnlineCountDisplay, 60 * 1000);
-    
-    // 监听页面可见性变化
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') {
-            sendHeartbeat(userId);
-        }
-    });
-}
-
-// 页面加载时初始化
+// 页面加载时初始化所有功能
 document.addEventListener('DOMContentLoaded', function() {
-    // 显示本地时间
-    updateLocalDate();
+    updateCountdown();
+    updateOnlineCount();
+    updateDateTime();
     
-    // 计算剩余天数
-    calculateDaysLeft();
+    // 每天更新一次倒计时
+    setInterval(updateCountdown, 24 * 60 * 60 * 1000);
     
-    // 初始化在线人数统计
-    initOnlineCount();
-    
-    // 设置定时器
-    setInterval(updateLocalDate, 60000); // 每分钟更新时间
-    setInterval(calculateDaysLeft, 86400000); // 每天更新倒计时
+    // 每分钟更新一次在线人数（模拟变化）
+    setInterval(updateOnlineCount, 60 * 1000);
 });
-
-// 导出函数供其他页面使用
-window.appStats = {
-    updateOnlineCountDisplay,
-    getOnlineCount
-};
