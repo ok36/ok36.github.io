@@ -9,42 +9,31 @@ function updateCountdown() {
     document.getElementById('days-left').textContent = daysLeft > 0 ? daysLeft : "已过期";
 }
 
-// 2. 无打扰设备统计（基于浏览器指纹）
+// 2. 模拟跨设备统计（通过用户交互确认）
 function updateTotalDevices() {
-    const statsKey = 'wanglaoshi_device_stats_v4';
-    const fingerprintKey = 'wanglaoshi_fingerprint';
+    const statsKey = 'wanglaoshi_cross_device_stats';
+    const confirmKey = 'wanglaoshi_user_confirmed';
 
-    // 生成简易浏览器指纹（不保证唯一性，但足够简单）
-    function generateFingerprint() {
-        const keys = [
-            navigator.userAgent,
-            navigator.hardwareConcurrency,
-            navigator.deviceMemory,
-            screen.width + 'x' + screen.height,
-            new Date().getTimezoneOffset()
-        ];
-        return keys.join('|');
-    }
-
-    // 获取或初始化统计
+    // 初始化统计（示例数据，实际需用户确认）
     let stats = JSON.parse(localStorage.getItem(statsKey)) || {
-        totalDevices: 0,
-        knownFingerprints: []
+        simulatedCount: 1, // 默认值
+        lastUpdated: new Date().toISOString()
     };
 
-    // 检查当前设备指纹
-    const currentFingerprint = generateFingerprint();
-    const isNewDevice = !stats.knownFingerprints.includes(currentFingerprint);
-
-    if (isNewDevice) {
-        stats.totalDevices += 1;
-        stats.knownFingerprints.push(currentFingerprint);
-        localStorage.setItem(statsKey, JSON.stringify(stats));
+    // 首次访问时询问用户是否是新设备
+    if (!localStorage.getItem(confirmKey)) {
+        const isNewDevice = confirm('您是首次在此设备上访问吗？\n\n点击"确定"统计为新设备，点击"取消"不计数。');
+        
+        if (isNewDevice) {
+            stats.simulatedCount += 1;
+            localStorage.setItem(statsKey, JSON.stringify(stats));
+        }
+        
+        localStorage.setItem(confirmKey, 'confirmed');
     }
 
-    // 更新显示（限制最大显示值）
-    document.getElementById('total-devices').textContent = 
-        Math.min(stats.totalDevices, 9999); // 防止异常值
+    // 显示统计（模拟值）
+    document.getElementById('total-devices').textContent = stats.simulatedCount;
 }
 
 // 3. 日期时间（保持不变）
