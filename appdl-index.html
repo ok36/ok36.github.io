@@ -5,29 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>王老师专升本计算机</title>
     <link rel="stylesheet" href="app-index.css">
+    <h1 class="teacher-name">
+        <a href="javascript:void(0);" onclick="handleDownload()">点击下载最新版APP</a>
+    </h1>
+    
     <script>
-        function downloadAPK() {
-            // 直接使用文件URL
-            const fileUrl = 'https://wlsapp.pages.dev/王老师(乾谦)专升本题库v3.2.2.apk';
-            
-            // 创建隐藏的下载链接
-            const link = document.createElement('a');
-            link.href = fileUrl;
-            link.download = '王老师(乾谦)专升本题库v3.2.2.apk';
-            link.target = '_blank';
-            
-            // 添加到DOM并触发点击
-            document.body.appendChild(link);
-            link.click();
-            
-            // 移除链接
-            document.body.removeChild(link);
-            
-            // 备用方案：直接打开新窗口
-            setTimeout(() => {
-                window.open(fileUrl, '_system');
-            }, 200);
-        }
+    function handleDownload() {
+        const fileUrl = 'https://wlsapp.pages.dev/王老师(乾谦)专升本题库v3.2.2.apk';
+        
+        // 方法1：尝试直接下载
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = '专升本题库v3.2.2.apk'; // 简化文件名
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // 方法2：3秒后尝试系统浏览器下载（备用方案）
+        setTimeout(() => {
+            window.open(fileUrl, '_system');
+        }, 300);
+    }
     </script>
 </head>
 <body>
