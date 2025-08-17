@@ -5,28 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>王老师专升本计算机</title>
     <link rel="stylesheet" href="app-index.css">
-    <h1 class="teacher-name">
-        <a href="javascript:void(0);" onclick="handleDownload()">点击下载最新版APP</a>
-    </h1>
-    
-    <script>
-    function handleDownload() {
-        const fileUrl = 'https://wlsapp.pages.dev/王老师(乾谦)专升本题库v3.2.2.apk';
-        
-        // 方法1：尝试直接下载
-        const link = document.createElement('a');
-        link.href = fileUrl;
-        link.download = '专升本题库v3.2.2.apk'; // 简化文件名
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        // 方法2：3秒后尝试系统浏览器下载（备用方案）
-        setTimeout(() => {
-            window.open(fileUrl, '_system');
-        }, 300);
-    }
-    </script>
 </head>
 <body>
     <div class="dynamic-bg"></div>
@@ -43,15 +21,23 @@
     
     <div class="content-container">
         <div class="content">
-            <h1 class="teacher-name">王老师（乾谦）</h1>
-            <h1 class="course-title">山东专升本题库</h1>
-            <h1 class="teacher-name">最新版APP</h1>
-            <h1 class="course-title">1、题目更多<br>2、速度更快<br>3、加错题本</h1>
+            <h1 class="teacher-name">德林</h1>
+            <h2 class="course-title">专升本计算机</h2>
+            <p class="motto">温故，知新。<br>勤学不殆，笃行致远。</p>
             
-            <h1 class="teacher-name"><a href="javascript:void(0);" onclick="downloadAPK()">点击下载最新版APP</a></h1>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <h3>倒计时</h3>
+                    <p>考试剩余天数<h3><span id="days-left">0</span></h3></p>
+                </div>
+                <div class="stat-box">
+                    <h3>使用统计</h3>
+                    <p>软件使用次数<h3><span id="total-devices">统计中...</span></h3></p>
+                </div>
+            </div>
             
-           <!-- <button class="enter-btn" onclick="window.location.href='#'">
-                进入学习</button> -->
+            <p class="date" id="current-date">正在获取日期...</p>
+            <button class="enter-btn" onclick="window.location.href='index.html'">进入学习</button>
         </div>
         <div class="copyright" id="copyright">
             © 2013-<span id="current-year"></span> 王老师专升本计算机课程
