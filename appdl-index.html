@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>王老师专升本计算机</title>
     <link rel="stylesheet" href="app-index.css">
+    <script>
+        function downloadAPK() {
+            // 直接使用文件URL
+            const fileUrl = 'https://wlsapp.pages.dev/王老师(乾谦)专升本题库v3.2.2.apk';
+            
+            // 创建隐藏的下载链接
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = '王老师(乾谦)专升本题库v3.2.2.apk';
+            link.target = '_blank';
+            
+            // 添加到DOM并触发点击
+            document.body.appendChild(link);
+            link.click();
+            
+            // 移除链接
+            document.body.removeChild(link);
+            
+            // 备用方案：直接打开新窗口
+            setTimeout(() => {
+                window.open(fileUrl, '_system');
+            }, 200);
+        }
+    </script>
 </head>
 <body>
     <div class="dynamic-bg"></div>
@@ -23,15 +47,13 @@
         <div class="content">
             <h1 class="teacher-name">王老师（乾谦）</h1>
             <h1 class="course-title">山东专升本题库</h1>
-			<h1 class="teacher-name">最新版APP</h1>
+            <h1 class="teacher-name">最新版APP</h1>
             <h1 class="course-title">1、题目更多<br>2、速度更快<br>3、加错题本</h1>
             
-            <h1 class="teacher-name"><a href="https://wlsapp.pages.dev/王老师(乾谦)专升本题库v3.2.2.apk">点击下载最新版APP</a></h1>
-			
-            
+            <h1 class="teacher-name"><a href="javascript:void(0);" onclick="downloadAPK()">点击下载最新版APP</a></h1>
             
            <!-- <button class="enter-btn" onclick="window.location.href='#'">
-				进入学习</button> -->
+                进入学习</button> -->
         </div>
         <div class="copyright" id="copyright">
             © 2013-<span id="current-year"></span> 王老师专升本计算机课程
